@@ -217,7 +217,7 @@ Home → Topic Selection → Batch Selection (if 16+ tasks) → Mode Selection �
 Show front text only → first tap anywhere in the practice area except Back reveals answer below → second tap advances to the next card
 
 **Write-in behaviour:**
-Show front → user types → submit → correct/wrong feedback → if wrong: show correct answer → next
+Show front → user types answer into full-width input → Submit checks with tolerance matching and records stats → if correct, show "Correct" and Continue → if wrong, show "Incorrect" plus the correct answer and Continue
 
 #### Results
 - Write-in: score e.g. 8/12 + list of wrong answers with correct answers

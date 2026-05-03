@@ -52,7 +52,7 @@ function App() {
       <Route path="/" element={<HomeView userId={auth.user.id} onSignOut={auth.signOut} />} />
       <Route path="/topics/:topicId/batches" element={<BatchSelectionView />} />
       <Route path="/topics/:topicId/modes" element={<ModeSelectionView />} />
-      <Route path="/topics/:topicId/practice" element={<PracticeView />} />
+      <Route path="/topics/:topicId/practice" element={<PracticeView userId={auth.user.id} />} />
       <Route path="/results" element={<ResultsView />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
