@@ -204,14 +204,17 @@ Home → Topic Selection → Batch Selection (if 16+ tasks) → Mode Selection �
 
 #### Practice
 - One task at a time, full screen
-- Progress indicator: e.g. 4 / 12
+- Minimal screen: only Back button, task text, and revealed answer area
+- Back button sits in the top-left corner
+- Back button uses large, high-visibility text sizing
+- Answer reveal must not shift the layout; reserve space for the revealed answer
 - Random order within selected batch
 - Session runs until user manually stops (X / End session button)
 - Back/X from Practice should return to Mode Selection for the current topic and selected batch
 - Tasks loop when end is reached
 
 **Flashcard behaviour:**
-Show front → tap to flip → "I knew it" / "I didn't" → next
+Show front text only → first tap anywhere in the practice area except Back reveals answer below → second tap advances to the next card
 
 **Write-in behaviour:**
 Show front → user types → submit → correct/wrong feedback → if wrong: show correct answer → next

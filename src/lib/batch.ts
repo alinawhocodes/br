@@ -53,3 +53,18 @@ export const buildBatchOptions = (tasks: Task[]): BatchOption[] => {
     },
   ];
 };
+
+export const getBatchOptionById = (tasks: Task[], batchId: string): BatchOption | null => {
+  const batches = buildBatchOptions(tasks);
+  return batches.find((batch) => batch.id === batchId) ?? null;
+};
+
+export const getTasksForBatch = (tasks: Task[], batchId: string): Task[] => {
+  const batch = getBatchOptionById(tasks, batchId);
+
+  if (!batch) {
+    return tasks;
+  }
+
+  return tasks.slice(batch.start, batch.end);
+};

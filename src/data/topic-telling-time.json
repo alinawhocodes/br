@@ -3,15 +3,22 @@
   "name": "Telling Time",
   "imageUrl": "https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=1200&q=80",
   "tasks": [
-    { "id": "telling-time-01", "front": "What time is it? 1:00", "back": "Uma hora" },
-    { "id": "telling-time-02", "front": "What time is it? 2:15", "back": "Duas e quinze" },
-    { "id": "telling-time-03", "front": "What time is it? 3:30", "back": "Três e meia" },
-    { "id": "telling-time-04", "front": "What time is it? 4:45", "back": "Quatro e quarenta e cinco" },
-    { "id": "telling-time-05", "front": "What time is it? 5:10", "back": "Cinco e dez" },
-    { "id": "telling-time-06", "front": "Translate: São sete horas", "back": "It is seven o'clock" },
-    { "id": "telling-time-07", "front": "Translate: Oito e vinte", "back": "Eight twenty" },
-    { "id": "telling-time-08", "front": "What time is it? 9:50", "back": "Nove e cinquenta" },
-    { "id": "telling-time-09", "front": "Translate: Meio-dia", "back": "Noon" },
-    { "id": "telling-time-10", "front": "Translate: Meia-noite", "back": "Midnight" }
+    { "id": "telling-time-01", "front": "1:00", "back": "Uma hora" },
+    { "id": "telling-time-02", "front": "2:15", "back": "Duas e quinze" },
+    { "id": "telling-time-03", "front": "3:30", "back": "Três e meia" },
+    { "id": "telling-time-04", "front": "4:45", "back": "Quatro e quarenta e cinco" },
+    { "id": "telling-time-05", "front": "5:10", "back": "Cinco e dez" },
+    { "id": "telling-time-06", "front": "São sete horas", "back": "It is seven o'clock" },
+    { "id": "telling-time-07", "front": "Oito e vinte", "back": "Eight twenty" },
+    { "id": "telling-time-08", "front": "9:50", "back": "Nove e cinquenta" },
+    { "id": "telling-time-09", "front": "Meio-dia", "back": "Noon" },
+    { "id": "telling-time-10", "front": "Meia-noite", "back": "Midnight" },
+    { "id": "telling-time-11", "front": "6:25", "back": "Seis e vinte e cinco" },
+    { "id": "telling-time-12", "front": "7:40", "back": "Sete e quarenta" },
+    { "id": "telling-time-13", "front": "8:05", "back": "Oito e cinco" },
+    { "id": "telling-time-14", "front": "10:30", "back": "Dez e meia" },
+    { "id": "telling-time-15", "front": "Onze e quinze", "back": "Eleven fifteen" },
+    { "id": "telling-time-16", "front": "Uma e quarenta e cinco", "back": "One forty-five" },
+    { "id": "telling-time-17", "front": "São duas horas", "back": "It is two o'clock" }
   ]
 }
