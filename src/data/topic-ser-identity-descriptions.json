@@ -1,0 +1,26 @@
+{
+  "id": "topic-ser-identity-descriptions",
+  "name": "Ser: Identity and Descriptions",
+  "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+  "tasks": [
+    { "id": "ser-identity-01", "front": "I am", "back": "eu sou" },
+    { "id": "ser-identity-02", "front": "you are (tu)", "back": "tu és" },
+    { "id": "ser-identity-03", "front": "you are (você)", "back": "você é" },
+    { "id": "ser-identity-04", "front": "he/she is", "back": "ele/ela é" },
+    { "id": "ser-identity-05", "front": "we are (a gente)", "back": "a gente é" },
+    { "id": "ser-identity-06", "front": "we are (nós)", "back": "nós somos" },
+    { "id": "ser-identity-07", "front": "they/you all are", "back": "eles/elas/vocês são" },
+    { "id": "ser-identity-08", "front": "My friend is tall.", "back": "Meu amigo é alto.", "acceptedBacks": ["Minha amiga é alta."] },
+    { "id": "ser-identity-09", "front": "I am Brazilian.", "back": "Eu sou brasileiro.", "acceptedBacks": ["Eu sou brasileira."] },
+    {
+      "id": "ser-identity-10",
+      "front": "Many Brazilians are Catholic.",
+      "back": "Muitos brasileiros são católicos.",
+      "acceptedBacks": ["Muitas brasileiras são católicas."]
+    },
+    { "id": "ser-identity-11", "front": "Alina is a woman.", "back": "A Alina é uma mulher." },
+    { "id": "ser-identity-12", "front": "They are heterosexual.", "back": "Eles são heterossexuais.", "acceptedBacks": ["Elas são heterossexuais."] },
+    { "id": "ser-identity-13", "front": "My friend is funny.", "back": "Meu amigo é engraçado.", "acceptedBacks": ["Minha amiga é engraçada."] },
+    { "id": "ser-identity-14", "front": "Alina is an engineer, she is not a Portuguese teacher.", "back": "A Alina é engenheira, ela não é professora de português." }
+  ]
+}

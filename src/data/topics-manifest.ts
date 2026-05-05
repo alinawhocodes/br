@@ -1,6 +1,8 @@
 import type { Topic, TopicSummary } from '../types';
 
 const topicModules = {
+  'topic-classroom-portuguese': () =>
+    import('./topic-classroom-portuguese.json').then((module) => module.default as Topic),
   'topic-countries-nationalities': () =>
     import('./topic-countries-nationalities.json').then((module) => module.default as Topic),
   'topic-daily-verbs': () => import('./topic-daily-verbs.json').then((module) => module.default as Topic),
@@ -10,6 +12,8 @@ const topicModules = {
     import('./topic-locations-and-prepositions.json').then((module) => module.default as Topic),
   'topic-numbers': () => import('./topic-numbers.json').then((module) => module.default as Topic),
   'topic-professions': () => import('./topic-professions.json').then((module) => module.default as Topic),
+  'topic-ser-identity-descriptions': () =>
+    import('./topic-ser-identity-descriptions.json').then((module) => module.default as Topic),
   'topic-seasons-and-months': () =>
     import('./topic-seasons-and-months.json').then((module) => module.default as Topic),
 } as const;
@@ -91,6 +95,19 @@ const topicSummaries: TopicSummary[] = [
       'locations-prepositions-25',
       'locations-prepositions-26',
       'locations-prepositions-27',
+    ],
+  },
+  {
+    id: 'topic-classroom-portuguese',
+    name: 'Classroom Portuguese',
+    imageUrl: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80',
+    taskCount: 5,
+    taskIds: [
+      'classroom-portuguese-01',
+      'classroom-portuguese-02',
+      'classroom-portuguese-03',
+      'classroom-portuguese-04',
+      'classroom-portuguese-05',
     ],
   },
   {
@@ -208,6 +225,28 @@ const topicSummaries: TopicSummary[] = [
     ],
   },
   {
+    id: 'topic-ser-identity-descriptions',
+    name: 'Ser: Identity and Descriptions',
+    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+    taskCount: 14,
+    taskIds: [
+      'ser-identity-01',
+      'ser-identity-02',
+      'ser-identity-03',
+      'ser-identity-04',
+      'ser-identity-05',
+      'ser-identity-06',
+      'ser-identity-07',
+      'ser-identity-08',
+      'ser-identity-09',
+      'ser-identity-10',
+      'ser-identity-11',
+      'ser-identity-12',
+      'ser-identity-13',
+      'ser-identity-14',
+    ],
+  },
+  {
     id: 'topic-seasons-and-months',
     name: 'Seasons and Months',
     imageUrl: 'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80',
@@ -243,7 +282,7 @@ const topicSummaries: TopicSummary[] = [
     id: 'topic-countries-nationalities',
     name: 'Countries and Nationalities',
     imageUrl: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80',
-    taskCount: 29,
+    taskCount: 38,
     taskIds: [
       'countries-nationalities-01',
       'countries-nationalities-02',
@@ -274,6 +313,15 @@ const topicSummaries: TopicSummary[] = [
       'countries-nationalities-27',
       'countries-nationalities-28',
       'countries-nationalities-29',
+      'countries-nationalities-30',
+      'countries-nationalities-31',
+      'countries-nationalities-32',
+      'countries-nationalities-33',
+      'countries-nationalities-34',
+      'countries-nationalities-35',
+      'countries-nationalities-36',
+      'countries-nationalities-37',
+      'countries-nationalities-38',
     ],
   },
   {

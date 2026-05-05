@@ -31,6 +31,15 @@
     { "id": "countries-nationalities-26", "front": "Israel / Israeli", "back": "Israel / israelense" },
     { "id": "countries-nationalities-27", "front": "Latvia / Latvian", "back": "A Letônia / letão, letã" },
     { "id": "countries-nationalities-28", "front": "Russia / Russian", "back": "A Rússia / russo, russa" },
-    { "id": "countries-nationalities-29", "front": "Lithuania / Lithuanian", "back": "A Lituânia / lituano, lituana" }
+    { "id": "countries-nationalities-29", "front": "Lithuania / Lithuanian", "back": "A Lituânia / lituano, lituana" },
+    { "id": "countries-nationalities-30", "front": "Where are you from?", "back": "De onde você é?" },
+    { "id": "countries-nationalities-31", "front": "I am from...", "back": "Eu sou do/da/dos/das/de..." },
+    { "id": "countries-nationalities-32", "front": "I am from Brazil.", "back": "Eu sou do Brasil." },
+    { "id": "countries-nationalities-33", "front": "I am from Spain.", "back": "Eu sou da Espanha." },
+    { "id": "countries-nationalities-34", "front": "I am from Latvia.", "back": "Eu sou da Letônia." },
+    { "id": "countries-nationalities-35", "front": "de + o", "back": "do (Eu sou do Brasil.)" },
+    { "id": "countries-nationalities-36", "front": "de + a", "back": "da (Eu sou da Espanha.)" },
+    { "id": "countries-nationalities-37", "front": "de + os", "back": "dos (Eu sou dos Estados Unidos.)" },
+    { "id": "countries-nationalities-38", "front": "de + as", "back": "das (Eu sou das Filipinas.)" }
   ]
 }

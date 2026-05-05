@@ -5,8 +5,13 @@
   "tasks": [
     { "id": "intro-small-talk-01", "front": "Greet people and introduce yourself", "back": "Cumprimentar pessoas e se apresentar" },
     { "id": "intro-small-talk-02", "front": "Hello, my name is ...", "back": "Olá, meu nome é ..." },
-    { "id": "intro-small-talk-03", "front": "What is your name?", "back": "Qual é o seu nome?" },
-    { "id": "intro-small-talk-04", "front": "My name is ...", "back": "Meu nome é ..." },
+    {
+      "id": "intro-small-talk-03",
+      "front": "What is your name?",
+      "back": "Qual é o seu nome?",
+      "acceptedBacks": ["Como você se chama?"]
+    },
+    { "id": "intro-small-talk-04", "front": "My name is ...", "back": "Meu nome é ...", "acceptedBacks": ["Eu me chamo..."] },
     { "id": "intro-small-talk-05", "front": "Nice to meet you.", "back": "Muito prazer." },
     { "id": "intro-small-talk-06", "front": "My pleasure.", "back": "O prazer é meu." },
     {
