@@ -29,8 +29,7 @@ export const TopicCard = ({ topic, successRate, onOpen }: TopicCardProps) => (
           <p className="mt-1 text-sm text-ink-800/70">{topic.taskCount} tasks</p>
         </div>
         <div className="rounded-2xl bg-sand-50 px-3 py-2 text-right">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-800/50">Write-in</p>
-          <p className="mt-1 text-sm font-semibold text-forest-700">
+          <p className="text-sm font-semibold text-forest-700">
             {successRate === null ? 'No data yet' : `${Math.round(successRate * 100)}% success`}
           </p>
         </div>

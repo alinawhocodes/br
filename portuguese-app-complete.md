@@ -160,7 +160,7 @@ Topic authoring rule: keep each topic task direction consistent (recommended: EN
 #### Flashcard (EN→PT or PT→EN)
 - Show front, user thinks, taps to flip
 - After reveal: tap cross (not remembered) or check (remembered)
-- No performance recorded in Supabase
+- Performance recorded in Supabase (times_shown, times_correct per task per user based on ❌/✅)
 - Direction depends on which mode user selects (EN→PT shows English front, PT→EN shows Portuguese front)
 
 #### Write-in
@@ -191,7 +191,7 @@ Home → Topic Selection → Batch Selection (if 16+ tasks) → Mode Selection �
 
 #### Home
 - List of topic cards
-- Each card shows: topic name, task count, success rate (write-in only — blank if never practiced)
+- Each card shows: topic name, task count, overall success rate from tracked attempts (blank if never practiced)
 - Each card has a photo icon button → opens material image in a modal/lightbox
 - Sort toggle: sequential (default) / worst performance first
 - Tap card body → proceed
@@ -259,7 +259,7 @@ Show front → user types answer into full-width input → Submit checks with to
   times_correct: number
 }
 ```
-Write-in mode only — no stats for flashcards.
+Both write-in and flashcard attempts contribute to task stats.
 
 #### Row Level Security
 - Users can only read/write their own rows in task_stats

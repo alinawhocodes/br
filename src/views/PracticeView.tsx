@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { isPracticeMode, usePracticeSession } from '../hooks/usePracticeSession';
-import { recordWriteInAttempt } from '../lib/stats';
+import { recordTaskAttempt } from '../lib/stats';
 import { isAnswerMatch } from '../lib/tolerance';
 import type { SessionResult, SessionWrongAnswer } from '../types';
 
@@ -80,8 +80,8 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
     }
   };
 
-  const handleFlashcardGrade = (correct: boolean) => {
-    if (!session.currentTask || !topicId || !mode) {
+  const handleFlashcardGrade = async (correct: boolean) => {
+    if (!session.currentTask || !topicId || !mode || submitting) {
       return;
     }
 
@@ -99,30 +99,45 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
           },
         ];
 
-    if (nextSeen >= session.totalTasks) {
-      const result: SessionResult = {
-        mode,
-        totalSeen: nextSeen,
-        totalAnswered: nextSeen,
-        correctCount: nextCorrect,
-        wrongAnswers: nextWrongAnswers,
-      };
+    setSubmitting(true);
+    setSubmissionError(null);
 
-      navigate('/results', {
-        state: {
-          result,
-          topicId,
-          batchId: batch,
-        },
+    try {
+      await recordTaskAttempt({
+        userId,
+        taskId: session.currentTask.id,
+        correct,
       });
-      return;
-    }
 
-    setFlashcardsSeen(nextSeen);
-    setFlashcardsCorrect(nextCorrect);
-    setFlashcardWrongAnswers(nextWrongAnswers);
-    setRevealed(false);
-    session.moveToNextTask();
+      if (nextSeen >= session.totalTasks) {
+        const result: SessionResult = {
+          mode,
+          totalSeen: nextSeen,
+          totalAnswered: nextSeen,
+          correctCount: nextCorrect,
+          wrongAnswers: nextWrongAnswers,
+        };
+
+        navigate('/results', {
+          state: {
+            result,
+            topicId,
+            batchId: batch,
+          },
+        });
+        return;
+      }
+
+      setFlashcardsSeen(nextSeen);
+      setFlashcardsCorrect(nextCorrect);
+      setFlashcardWrongAnswers(nextWrongAnswers);
+      setRevealed(false);
+      session.moveToNextTask();
+    } catch (error) {
+      setSubmissionError(error instanceof Error ? error.message : 'Unable to save this attempt.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleWriteInSubmit = async () => {
@@ -135,7 +150,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
     setSubmissionError(null);
 
     try {
-      await recordWriteInAttempt({
+      await recordTaskAttempt({
         userId,
         taskId: session.currentTask.id,
         correct,
@@ -273,17 +288,17 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
               <div className="grid grid-cols-2 gap-3">
                 <button
                   className="rounded-full border border-terracotta-600 px-6 py-4 text-3xl font-semibold text-terracotta-600 disabled:opacity-40"
-                  onClick={() => handleFlashcardGrade(false)}
+                  onClick={() => void handleFlashcardGrade(false)}
                   type="button"
-                  disabled={!revealed}
+                  disabled={!revealed || submitting}
                 >
                   ❌
                 </button>
                 <button
                   className="rounded-full border border-forest-700 px-6 py-4 text-3xl font-semibold text-forest-700 disabled:opacity-40"
-                  onClick={() => handleFlashcardGrade(true)}
+                  onClick={() => void handleFlashcardGrade(true)}
                   type="button"
-                  disabled={!revealed}
+                  disabled={!revealed || submitting}
                 >
                   ✅
                 </button>

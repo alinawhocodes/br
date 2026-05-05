@@ -21,7 +21,7 @@ export const fetchTaskStats = async (userId: string, taskIds: string[]): Promise
   return (data satisfies TaskStatRow[]) as TaskStat[];
 };
 
-export const recordWriteInAttempt = async (params: {
+export const recordTaskAttempt = async (params: {
   userId: string;
   taskId: string;
   correct: boolean;
@@ -60,3 +60,5 @@ export const recordWriteInAttempt = async (params: {
     throw upsertError;
   }
 };
+
+export const recordWriteInAttempt = recordTaskAttempt;

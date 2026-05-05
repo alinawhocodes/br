@@ -34,7 +34,6 @@ export const HomeView = ({ userId, onSignOut }: HomeViewProps) => {
   return (
     <AppShell
       title="Choose a topic"
-      subtitle="Your topic library lives in repo JSON files, while write-in accuracy comes from Supabase."
       action={
         <button className="rounded-full border border-ink-800/10 px-4 py-2 text-sm font-semibold text-ink-900" onClick={() => void onSignOut()}>
           Sign out
@@ -52,7 +51,7 @@ export const HomeView = ({ userId, onSignOut }: HomeViewProps) => {
       {loading ? <p className="mt-8 text-sm text-ink-800/70">Loading topics...</p> : null}
       {error ? <p className="mt-8 rounded-2xl bg-terracotta-500/10 px-4 py-3 text-sm text-terracotta-600">{error}</p> : null}
       {statsError ? <p className="mt-4 rounded-2xl bg-terracotta-500/10 px-4 py-3 text-sm text-terracotta-600">{statsError}</p> : null}
-      {statsLoading ? <p className="mt-4 text-sm text-ink-800/70">Refreshing write-in performance...</p> : null}
+      {statsLoading ? <p className="mt-4 text-sm text-ink-800/70">Refreshing tracked performance...</p> : null}
 
       <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {sortedTopics.map((topic) => (
