@@ -1,0 +1,31 @@
+{
+  "id": "topic-seasons-and-months",
+  "name": "Seasons and Months",
+  "imageUrl": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80",
+  "tasks": [
+    { "id": "seasons-months-01", "front": "winter", "back": "inverno" },
+    { "id": "seasons-months-02", "front": "spring", "back": "primavera" },
+    { "id": "seasons-months-03", "front": "summer", "back": "verão" },
+    { "id": "seasons-months-04", "front": "autumn / fall", "back": "outono" },
+    { "id": "seasons-months-05", "front": "January", "back": "janeiro" },
+    { "id": "seasons-months-06", "front": "February", "back": "fevereiro" },
+    { "id": "seasons-months-07", "front": "March", "back": "março" },
+    { "id": "seasons-months-08", "front": "April", "back": "abril" },
+    { "id": "seasons-months-09", "front": "May", "back": "maio" },
+    { "id": "seasons-months-10", "front": "June", "back": "junho" },
+    { "id": "seasons-months-11", "front": "July", "back": "julho" },
+    { "id": "seasons-months-12", "front": "August", "back": "agosto" },
+    { "id": "seasons-months-13", "front": "September", "back": "setembro" },
+    { "id": "seasons-months-14", "front": "October", "back": "outubro" },
+    { "id": "seasons-months-15", "front": "November", "back": "novembro" },
+    { "id": "seasons-months-16", "front": "December", "back": "dezembro" },
+    { "id": "seasons-months-17", "front": "Monday", "back": "segunda-feira" },
+    { "id": "seasons-months-18", "front": "Tuesday", "back": "terça-feira" },
+    { "id": "seasons-months-19", "front": "Wednesday", "back": "quarta-feira" },
+    { "id": "seasons-months-20", "front": "Thursday", "back": "quinta-feira" },
+    { "id": "seasons-months-21", "front": "Friday", "back": "sexta-feira" },
+    { "id": "seasons-months-22", "front": "Saturday", "back": "sábado" },
+    { "id": "seasons-months-23", "front": "Sunday", "back": "domingo" },
+    { "id": "seasons-months-24", "front": "weekend", "back": "fim de semana", "acceptedBacks": ["final de semana"] }
+  ]
+}
