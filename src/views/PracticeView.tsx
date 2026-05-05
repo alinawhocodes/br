@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { isPracticeMode, usePracticeSession } from '../hooks/usePracticeSession';
 import { recordWriteInAttempt } from '../lib/stats';
 import { isAnswerMatch } from '../lib/tolerance';
+import type { SessionResult, SessionWrongAnswer } from '../types';
 
 type PracticeViewProps = {
   userId: string;
@@ -10,29 +11,51 @@ type PracticeViewProps = {
 
 export const PracticeView = ({ userId }: PracticeViewProps) => {
   const { topicId } = useParams();
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const modeParam = searchParams.get('mode');
   const mode = isPracticeMode(modeParam) ? modeParam : null;
   const batch = searchParams.get('batch') ?? 'all';
+  const retryParam = searchParams.get('retry');
+  const retryTaskIds = useMemo(() => (retryParam ? retryParam.split(',').filter(Boolean) : []), [retryParam]);
   const backToModes = topicId ? `/topics/${topicId}/modes?batch=${batch}` : '/';
   const session = usePracticeSession({
     topicId,
     batchId: batch,
     mode,
+    taskIdsOverride: retryTaskIds.length > 0 ? retryTaskIds : undefined,
   });
   const [revealed, setRevealed] = useState(false);
   const [answer, setAnswer] = useState('');
   const [feedbackState, setFeedbackState] = useState<'idle' | 'correct' | 'wrong'>('idle');
   const [submitting, setSubmitting] = useState(false);
   const [submissionError, setSubmissionError] = useState<string | null>(null);
+  const [flashcardsSeen, setFlashcardsSeen] = useState(0);
+  const [flashcardsCorrect, setFlashcardsCorrect] = useState(0);
+  const [flashcardWrongAnswers, setFlashcardWrongAnswers] = useState<SessionWrongAnswer[]>([]);
+  const [writeInAnswered, setWriteInAnswered] = useState(0);
+  const [writeInCorrect, setWriteInCorrect] = useState(0);
+  const [writeInWrongAnswers, setWriteInWrongAnswers] = useState<SessionWrongAnswer[]>([]);
+
+  useLayoutEffect(() => {
+    setRevealed(false);
+  }, [session.currentTask?.id]);
 
   useEffect(() => {
-    setRevealed(false);
     setAnswer('');
     setFeedbackState('idle');
     setSubmitting(false);
     setSubmissionError(null);
   }, [session.currentTask?.id]);
+
+  useEffect(() => {
+    setFlashcardsSeen(0);
+    setFlashcardsCorrect(0);
+    setFlashcardWrongAnswers([]);
+    setWriteInAnswered(0);
+    setWriteInCorrect(0);
+    setWriteInWrongAnswers([]);
+  }, [mode, session.topic?.id, batch, retryParam]);
 
   const promptText =
     mode === 'flashcard-pt-en' ? session.currentTask?.back ?? '' : session.currentTask?.front ?? '';
@@ -52,12 +75,54 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
   }
 
   const handlePracticeAreaClick = () => {
-    if (revealed) {
-      session.moveToNextTask();
+    if (!revealed) {
+      setRevealed(true);
+    }
+  };
+
+  const handleFlashcardGrade = (correct: boolean) => {
+    if (!session.currentTask || !topicId || !mode) {
       return;
     }
 
-    setRevealed(true);
+    const nextSeen = flashcardsSeen + 1;
+    const nextCorrect = flashcardsCorrect + (correct ? 1 : 0);
+    const nextWrongAnswers = correct
+      ? flashcardWrongAnswers
+      : [
+          ...flashcardWrongAnswers,
+          {
+            taskId: session.currentTask.id,
+            prompt: promptText,
+            userAnswer: 'I did not remember',
+            correctAnswer: answerText,
+          },
+        ];
+
+    if (nextSeen >= session.totalTasks) {
+      const result: SessionResult = {
+        mode,
+        totalSeen: nextSeen,
+        totalAnswered: nextSeen,
+        correctCount: nextCorrect,
+        wrongAnswers: nextWrongAnswers,
+      };
+
+      navigate('/results', {
+        state: {
+          result,
+          topicId,
+          batchId: batch,
+        },
+      });
+      return;
+    }
+
+    setFlashcardsSeen(nextSeen);
+    setFlashcardsCorrect(nextCorrect);
+    setFlashcardWrongAnswers(nextWrongAnswers);
+    setRevealed(false);
+    session.moveToNextTask();
   };
 
   const handleWriteInSubmit = async () => {
@@ -75,6 +140,20 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
         taskId: session.currentTask.id,
         correct,
       });
+      setWriteInAnswered((current) => current + 1);
+      if (correct) {
+        setWriteInCorrect((current) => current + 1);
+      } else {
+        setWriteInWrongAnswers((current) => [
+          ...current,
+          {
+            taskId: session.currentTask.id,
+            prompt: session.currentTask.front,
+            userAnswer: answer,
+            correctAnswer: session.currentTask.back,
+          },
+        ]);
+      }
       setFeedbackState(correct ? 'correct' : 'wrong');
     } catch (error) {
       setSubmissionError(error instanceof Error ? error.message : 'Unable to save this attempt.');
@@ -84,12 +163,35 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
   };
 
   const handleWriteInAdvance = () => {
+    if (!topicId || !mode) {
+      return;
+    }
+
+    if (writeInAnswered >= session.totalTasks) {
+      const result: SessionResult = {
+        mode,
+        totalSeen: writeInAnswered,
+        totalAnswered: writeInAnswered,
+        correctCount: writeInCorrect,
+        wrongAnswers: writeInWrongAnswers,
+      };
+
+      navigate('/results', {
+        state: {
+          result,
+          topicId,
+          batchId: batch,
+        },
+      });
+      return;
+    }
+
     session.moveToNextTask();
   };
 
   return (
     <div className="flex min-h-screen flex-col bg-sand-50">
-      <div className="flex items-start px-6 pb-4 pt-6">
+      <div className="flex items-start justify-between px-6 pb-4 pt-6">
         <Link className="text-2xl font-semibold text-forest-700" to={backToModes}>
           Back
         </Link>
@@ -149,22 +251,45 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
             </div>
           </div>
         ) : (
-          <button
-            className="flex flex-1 flex-col items-center justify-center border-0 bg-transparent p-0 text-inherit"
-            onClick={handlePracticeAreaClick}
-            type="button"
-          >
-            <span className="w-full text-center text-4xl font-semibold leading-tight text-ink-900 sm:text-5xl">{promptText}</span>
-            <div className="mt-8 flex min-h-32 w-full items-center justify-center">
-              <p
-                className={`text-center text-3xl font-medium text-forest-700 transition-opacity sm:text-4xl ${
-                  revealed ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                {answerText}
-              </p>
+          <div className="flex flex-1 flex-col">
+            <button
+              className="flex flex-1 flex-col items-center justify-center border-0 bg-transparent p-0 text-inherit"
+              onClick={handlePracticeAreaClick}
+              type="button"
+            >
+              <span className="w-full text-center text-4xl font-semibold leading-tight text-ink-900 sm:text-5xl">{promptText}</span>
+              <div className="mt-8 flex min-h-32 w-full items-center justify-center">
+                <p
+                  className={`text-center text-3xl font-medium text-forest-700 sm:text-4xl ${
+                    revealed ? 'visible' : 'invisible'
+                  }`}
+                >
+                  {answerText}
+                </p>
+              </div>
+            </button>
+
+            <div className="pt-4">
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  className="rounded-full border border-terracotta-600 px-6 py-4 text-3xl font-semibold text-terracotta-600 disabled:opacity-40"
+                  onClick={() => handleFlashcardGrade(false)}
+                  type="button"
+                  disabled={!revealed}
+                >
+                  ❌
+                </button>
+                <button
+                  className="rounded-full border border-forest-700 px-6 py-4 text-3xl font-semibold text-forest-700 disabled:opacity-40"
+                  onClick={() => handleFlashcardGrade(true)}
+                  type="button"
+                  disabled={!revealed}
+                >
+                  ✅
+                </button>
+              </div>
             </div>
-          </button>
+          </div>
         )}
       </div>
     </div>

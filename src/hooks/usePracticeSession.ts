@@ -30,6 +30,7 @@ export const usePracticeSession = (params: {
   topicId: string | undefined;
   batchId: string;
   mode: PracticeMode | null;
+  taskIdsOverride?: string[];
 }) => {
   const [state, setState] = useState<PracticeSessionState>({
     topic: null,
@@ -93,7 +94,11 @@ export const usePracticeSession = (params: {
 
         const batch = getBatchOptionById(topic.tasks, params.batchId) ?? getBatchOptionById(topic.tasks, 'all');
         const batchTasks = getTasksForBatch(topic.tasks, params.batchId);
-        const shuffledTasks = shuffleTasks(batchTasks);
+        const selectedTasks =
+          params.taskIdsOverride && params.taskIdsOverride.length > 0
+            ? batchTasks.filter((task) => params.taskIdsOverride?.includes(task.id))
+            : batchTasks;
+        const shuffledTasks = shuffleTasks(selectedTasks);
 
         setState({
           topic,
@@ -122,7 +127,7 @@ export const usePracticeSession = (params: {
     return () => {
       isActive = false;
     };
-  }, [params.batchId, params.mode, params.topicId]);
+  }, [params.batchId, params.mode, params.taskIdsOverride, params.topicId]);
 
   const currentTask = state.tasks[state.currentIndex] ?? null;
 

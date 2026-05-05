@@ -151,13 +151,15 @@ All tasks share the same structure. Practice mode determines how they're present
 }
 ```
 
+Topic authoring rule: keep each topic task direction consistent (recommended: EN prompt in `front`, PT answer in `back`) so EN→PT and PT→EN modes behave predictably.
+
 ---
 
 ### Task Types / Practice Modes
 
 #### Flashcard (EN→PT or PT→EN)
 - Show front, user thinks, taps to flip
-- After flipping: "I knew it" / "I didn't" (self-rated)
+- After reveal: tap cross (not remembered) or check (remembered)
 - No performance recorded in Supabase
 - Direction depends on which mode user selects (EN→PT shows English front, PT→EN shows Portuguese front)
 
@@ -204,25 +206,26 @@ Home → Topic Selection → Batch Selection (if 16+ tasks) → Mode Selection �
 
 #### Practice
 - One task at a time, full screen
-- Minimal screen: only Back button, task text, and revealed answer area
+- Minimal screen: Back button, task text, revealed answer area, and cross/check grading buttons
 - Back button sits in the top-left corner
 - Back button uses large, high-visibility text sizing
 - Answer reveal must not shift the layout; reserve space for the revealed answer
 - Random order within selected batch
-- Session runs until user manually stops (X / End session button)
-- Back/X from Practice should return to Mode Selection for the current topic and selected batch
-- Tasks loop when end is reached
+- Session ends automatically after one full pass through the selected cards
+- Back from Practice should return to Mode Selection for the current topic and selected batch
 
 **Flashcard behaviour:**
-Show front text only → first tap anywhere in the practice area except Back reveals answer below → second tap advances to the next card
+Show front text only → tap practice area to reveal answer below → tap ❌/✅ to mark not remembered/remembered and advance to next card
 
 **Write-in behaviour:**
 Show front → user types answer into full-width input → Submit checks with tolerance matching and records stats → if correct, show "Correct" and Continue → if wrong, show "Incorrect" plus the correct answer and Continue
 
 #### Results
-- Write-in: score e.g. 8/12 + list of wrong answers with correct answers
-- Flashcards: simple session summary (tasks seen, no score)
-- Actions: Retry wrong answers / Restart / Back to Home
+- Write-in: score (e.g. 8/12) + list of wrong answers with correct answers
+- Flashcards: score based on check/cross marks + list of not remembered cards
+- Actions: Retry wrong answers, Restart, Back to Home
+- `Retry wrong answers` is intentionally scoped to only the missed cards from the finished session (not the whole batch), to focus practice where it is needed most
+- In wrong-answer details: write-in shows "Your answer" + "Correct"; flashcards show only the prompt and the correct answer (no redundant "Your answer" line)
 
 ---
 
