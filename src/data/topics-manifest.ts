@@ -3,6 +3,7 @@ import type { Topic, TopicSummary } from '../types';
 const topicModules = {
   'topic-countries-nationalities': () =>
     import('./topic-countries-nationalities.json').then((module) => module.default as Topic),
+  'topic-daily-verbs': () => import('./topic-daily-verbs.json').then((module) => module.default as Topic),
   'topic-introductions-small-talk': () =>
     import('./topic-introductions-small-talk.json').then((module) => module.default as Topic),
   'topic-professions': () => import('./topic-professions.json').then((module) => module.default as Topic),
@@ -10,6 +11,49 @@ const topicModules = {
 } as const;
 
 const topicSummaries: TopicSummary[] = [
+  {
+    id: 'topic-daily-verbs',
+    name: 'Daily Verbs',
+    imageUrl: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80',
+    taskCount: 35,
+    taskIds: [
+      'daily-verbs-01',
+      'daily-verbs-02',
+      'daily-verbs-03',
+      'daily-verbs-04',
+      'daily-verbs-05',
+      'daily-verbs-06',
+      'daily-verbs-07',
+      'daily-verbs-08',
+      'daily-verbs-09',
+      'daily-verbs-10',
+      'daily-verbs-11',
+      'daily-verbs-12',
+      'daily-verbs-13',
+      'daily-verbs-14',
+      'daily-verbs-15',
+      'daily-verbs-16',
+      'daily-verbs-17',
+      'daily-verbs-18',
+      'daily-verbs-19',
+      'daily-verbs-20',
+      'daily-verbs-21',
+      'daily-verbs-22',
+      'daily-verbs-23',
+      'daily-verbs-24',
+      'daily-verbs-25',
+      'daily-verbs-26',
+      'daily-verbs-27',
+      'daily-verbs-28',
+      'daily-verbs-29',
+      'daily-verbs-30',
+      'daily-verbs-31',
+      'daily-verbs-32',
+      'daily-verbs-33',
+      'daily-verbs-34',
+      'daily-verbs-35',
+    ],
+  },
   {
     id: 'topic-professions',
     name: 'Professions and Work',
