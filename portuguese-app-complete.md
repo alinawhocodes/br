@@ -218,12 +218,14 @@ Home → Topic Selection → Batch Selection (if 16+ tasks) → Mode Selection �
 - Random order within selected batch
 - Session ends automatically after one full pass through the selected cards
 - Back from Practice should return to Mode Selection for the current topic and selected batch
+- Stats are buffered during the session and saved in one batched write only when the session completes (right before Results)
+- If user leaves Practice early via Back, no partial stats are saved
 
 **Flashcard behaviour:**
 Show front text only → tap practice area to reveal answer below → tap ❌/✅ to mark not remembered/remembered and advance to next card
 
 **Write-in behaviour:**
-Show front → user types answer into full-width input → Submit checks with tolerance matching across all configured valid options and records stats → if correct, show "Correct" and Continue → if wrong, show "Incorrect" plus the correct answer/options and Continue
+Show front → user types answer into full-width input → Submit checks with tolerance matching across all configured valid options → if correct, show "Correct" and Continue → if wrong, show "Incorrect" plus the correct answer/options and Continue
 
 #### Results
 - Write-in: score (e.g. 8/12) + list of wrong answers with correct answers
@@ -265,6 +267,7 @@ Show front → user types answer into full-width input → Submit checks with to
 }
 ```
 Both write-in and flashcard attempts contribute to task stats.
+Stats are committed per completed session (batched), not per individual in-session answer click.
 
 #### Row Level Security
 - Users can only read/write their own rows in task_stats

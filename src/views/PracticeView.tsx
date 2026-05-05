@@ -1,12 +1,17 @@
 import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { isPracticeMode, usePracticeSession } from '../hooks/usePracticeSession';
-import { recordTaskAttempt } from '../lib/stats';
+import { recordTaskAttemptsBatch } from '../lib/stats';
 import { isAnswerMatchAny } from '../lib/tolerance';
 import type { SessionResult, SessionWrongAnswer } from '../types';
 
 type PracticeViewProps = {
   userId: string;
+};
+
+type PendingAttempt = {
+  taskId: string;
+  correct: boolean;
 };
 
 export const PracticeView = ({ userId }: PracticeViewProps) => {
@@ -30,6 +35,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
   const [feedbackState, setFeedbackState] = useState<'idle' | 'correct' | 'wrong'>('idle');
   const [submitting, setSubmitting] = useState(false);
   const [submissionError, setSubmissionError] = useState<string | null>(null);
+  const [pendingAttempts, setPendingAttempts] = useState<PendingAttempt[]>([]);
   const [flashcardsSeen, setFlashcardsSeen] = useState(0);
   const [flashcardsCorrect, setFlashcardsCorrect] = useState(0);
   const [flashcardWrongAnswers, setFlashcardWrongAnswers] = useState<SessionWrongAnswer[]>([]);
@@ -55,6 +61,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
     setWriteInAnswered(0);
     setWriteInCorrect(0);
     setWriteInWrongAnswers([]);
+    setPendingAttempts([]);
   }, [mode, session.topic?.id, batch, retryParam]);
 
   const promptText =
@@ -91,6 +98,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
 
     const nextSeen = flashcardsSeen + 1;
     const nextCorrect = flashcardsCorrect + (correct ? 1 : 0);
+    const nextPendingAttempts = [...pendingAttempts, { taskId: session.currentTask.id, correct }];
     const nextWrongAnswers = correct
       ? flashcardWrongAnswers
       : [
@@ -103,17 +111,15 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
           },
         ];
 
-    setSubmitting(true);
     setSubmissionError(null);
 
-    try {
-      await recordTaskAttempt({
-        userId,
-        taskId: session.currentTask.id,
-        correct,
-      });
-
-      if (nextSeen >= session.totalTasks) {
+    if (nextSeen >= session.totalTasks) {
+      setSubmitting(true);
+      try {
+        await recordTaskAttemptsBatch({
+          userId,
+          attempts: nextPendingAttempts,
+        });
         const result: SessionResult = {
           mode,
           totalSeen: nextSeen,
@@ -130,78 +136,87 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
           },
         });
         return;
+      } catch (error) {
+        setSubmissionError(error instanceof Error ? error.message : 'Unable to save this session.');
+      } finally {
+        setSubmitting(false);
       }
-
-      setFlashcardsSeen(nextSeen);
-      setFlashcardsCorrect(nextCorrect);
-      setFlashcardWrongAnswers(nextWrongAnswers);
-      setRevealed(false);
-      session.moveToNextTask();
-    } catch (error) {
-      setSubmissionError(error instanceof Error ? error.message : 'Unable to save this attempt.');
-    } finally {
-      setSubmitting(false);
+      return;
     }
+
+    setPendingAttempts(nextPendingAttempts);
+    setFlashcardsSeen(nextSeen);
+    setFlashcardsCorrect(nextCorrect);
+    setFlashcardWrongAnswers(nextWrongAnswers);
+    setRevealed(false);
+    session.moveToNextTask();
   };
 
-  const handleWriteInSubmit = async () => {
+  const handleWriteInSubmit = () => {
     if (!session.currentTask || submitting) {
       return;
     }
 
     const correct = isAnswerMatchAny(answer, writeInExpectedOptions);
-    setSubmitting(true);
     setSubmissionError(null);
 
-    try {
-      await recordTaskAttempt({
-        userId,
+    setPendingAttempts((current) => [
+      ...current,
+      {
         taskId: session.currentTask.id,
         correct,
-      });
-      setWriteInAnswered((current) => current + 1);
-      if (correct) {
-        setWriteInCorrect((current) => current + 1);
-      } else {
-        setWriteInWrongAnswers((current) => [
-          ...current,
-          {
-            taskId: session.currentTask.id,
-            prompt: session.currentTask.front,
-            userAnswer: answer,
-            correctAnswer: writeInExpectedOptions.join(' / '),
-          },
-        ]);
-      }
-      setFeedbackState(correct ? 'correct' : 'wrong');
-    } catch (error) {
-      setSubmissionError(error instanceof Error ? error.message : 'Unable to save this attempt.');
-    } finally {
-      setSubmitting(false);
+      },
+    ]);
+    setWriteInAnswered((current) => current + 1);
+    if (correct) {
+      setWriteInCorrect((current) => current + 1);
+    } else {
+      setWriteInWrongAnswers((current) => [
+        ...current,
+        {
+          taskId: session.currentTask.id,
+          prompt: session.currentTask.front,
+          userAnswer: answer,
+          correctAnswer: writeInExpectedOptions.join(' / '),
+        },
+      ]);
     }
+    setFeedbackState(correct ? 'correct' : 'wrong');
   };
 
-  const handleWriteInAdvance = () => {
+  const handleWriteInAdvance = async () => {
     if (!topicId || !mode) {
       return;
     }
 
     if (writeInAnswered >= session.totalTasks) {
-      const result: SessionResult = {
-        mode,
-        totalSeen: writeInAnswered,
-        totalAnswered: writeInAnswered,
-        correctCount: writeInCorrect,
-        wrongAnswers: writeInWrongAnswers,
-      };
+      setSubmitting(true);
+      setSubmissionError(null);
+      try {
+        await recordTaskAttemptsBatch({
+          userId,
+          attempts: pendingAttempts,
+        });
+        const result: SessionResult = {
+          mode,
+          totalSeen: writeInAnswered,
+          totalAnswered: writeInAnswered,
+          correctCount: writeInCorrect,
+          wrongAnswers: writeInWrongAnswers,
+        };
 
-      navigate('/results', {
-        state: {
-          result,
-          topicId,
-          batchId: batch,
-        },
-      });
+        navigate('/results', {
+          state: {
+            result,
+            topicId,
+            batchId: batch,
+          },
+        });
+      } catch (error) {
+        setSubmissionError(error instanceof Error ? error.message : 'Unable to save this session.');
+      } finally {
+        setSubmitting(false);
+      }
       return;
     }
 
@@ -261,10 +276,11 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
               ) : (
                 <button
                   className="w-full rounded-full bg-ink-900 px-8 py-6 text-2xl font-semibold text-white"
-                  onClick={handleWriteInAdvance}
+                  onClick={() => void handleWriteInAdvance()}
                   type="button"
+                  disabled={submitting}
                 >
-                  Continue
+                  {submitting ? 'Saving...' : 'Continue'}
                 </button>
               )}
             </div>
@@ -289,6 +305,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
             </button>
 
             <div className="pt-4">
+              {submissionError ? <p className="pb-3 text-center text-lg text-terracotta-600">{submissionError}</p> : null}
               <div className="grid grid-cols-2 gap-3">
                 <button
                   className="rounded-full border border-terracotta-600 px-6 py-4 text-3xl font-semibold text-terracotta-600 disabled:opacity-40"
