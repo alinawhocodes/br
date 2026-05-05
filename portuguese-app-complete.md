@@ -198,6 +198,7 @@ Home → Topic Selection → Batch Selection (if 16+ tasks) → Mode Selection �
 - Each card shows: topic name, task count, overall success rate from tracked attempts (blank if never practiced)
 - Each card has a photo icon button → opens material image in a modal/lightbox
 - Sort toggle: sequential (default) / worst performance first
+- In `worst performance first`, topics with no data are treated as `0%` and shown first
 - Tap card body → proceed
 
 #### Batch Selection (only if 16+ tasks)

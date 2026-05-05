@@ -25,8 +25,8 @@ export const HomeView = ({ userId, onSignOut }: HomeViewProps) => {
     }
 
     return [...topics].sort((left, right) => {
-      const leftAccuracy = topicRates[left.id]?.accuracy ?? Number.POSITIVE_INFINITY;
-      const rightAccuracy = topicRates[right.id]?.accuracy ?? Number.POSITIVE_INFINITY;
+      const leftAccuracy = topicRates[left.id]?.accuracy ?? 0;
+      const rightAccuracy = topicRates[right.id]?.accuracy ?? 0;
       return leftAccuracy - rightAccuracy;
     });
   }, [sortMode, topicRates, topics]);
