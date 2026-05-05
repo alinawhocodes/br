@@ -281,7 +281,7 @@ const topicSummaries: TopicSummary[] = [
     id: 'topic-introductions-small-talk',
     name: 'Introductions and Small Talk',
     imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80',
-    taskCount: 10,
+    taskCount: 13,
     taskIds: [
       'intro-small-talk-01',
       'intro-small-talk-02',
@@ -293,6 +293,9 @@ const topicSummaries: TopicSummary[] = [
       'intro-small-talk-08',
       'intro-small-talk-09',
       'intro-small-talk-10',
+      'intro-small-talk-11',
+      'intro-small-talk-12',
+      'intro-small-talk-13',
     ],
   },
   {

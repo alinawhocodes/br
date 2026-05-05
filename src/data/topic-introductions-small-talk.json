@@ -22,6 +22,9 @@
       "back": "Tudo certo.",
       "acceptedBacks": ["Tudo bem.", "Tudo de boa."]
     },
-    { "id": "intro-small-talk-10", "front": "I'm great. (female speaker)", "back": "Eu estou ótima." }
+    { "id": "intro-small-talk-10", "front": "I'm great. (female speaker)", "back": "Eu estou ótima." },
+    { "id": "intro-small-talk-11", "front": "How old is he/she?", "back": "Quantos anos ele/ela tem?" },
+    { "id": "intro-small-talk-12", "front": "He/She is ... years old.", "back": "Ele/ela tem ... anos." },
+    { "id": "intro-small-talk-13", "front": "I think that...", "back": "Eu acho que..." }
   ]
 }
