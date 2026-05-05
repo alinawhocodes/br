@@ -1,7 +1,7 @@
 {
   "id": "topic-countries-nationalities",
   "name": "Countries and Nationalities",
-  "imageUrl": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=1200&q=80",
+  "imageUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
   "tasks": [
     { "id": "countries-nationalities-01", "front": "Countries and nationalities", "back": "Países e nacionalidades" },
     { "id": "countries-nationalities-02", "front": "What is her name?", "back": "Qual é o nome dela?" },

@@ -1,0 +1,33 @@
+{
+  "id": "topic-professions",
+  "name": "Professions and Work",
+  "imageUrl": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80",
+  "tasks": [
+    { "id": "professions-01", "front": "What do you do?", "back": "O que você faz?" },
+    { "id": "professions-02", "front": "What is your profession?", "back": "Qual é a sua profissão?" },
+    { "id": "professions-03", "front": "I am...", "back": "Eu sou..." },
+    { "id": "professions-04", "front": "What does he/she do?", "back": "O que ele/ela faz?" },
+    { "id": "professions-05", "front": "He/She is...", "back": "Ele/ela é..." },
+    { "id": "professions-06", "front": "teacher", "back": "professor(a)" },
+    { "id": "professions-07", "front": "software engineer", "back": "engenheiro(a) de software", "acceptedBacks": ["desenvolvedor(a) de software"] },
+    { "id": "professions-08", "front": "doctor", "back": "médico(a)" },
+    { "id": "professions-09", "front": "nurse", "back": "enfermeiro(a)" },
+    { "id": "professions-10", "front": "student", "back": "estudante" },
+    { "id": "professions-11", "front": "dentist", "back": "dentista" },
+    { "id": "professions-12", "front": "pilot", "back": "piloto" },
+    { "id": "professions-13", "front": "journalist", "back": "jornalista" },
+    { "id": "professions-14", "front": "bricklayer", "back": "pedreiro" },
+    { "id": "professions-15", "front": "architect", "back": "arquiteto(a)" },
+    { "id": "professions-16", "front": "waiter / waitress", "back": "garçom / garçonete" },
+    { "id": "professions-17", "front": "housewife / homemaker", "back": "dona de casa" },
+    { "id": "professions-18", "front": "police officer", "back": "policial" },
+    { "id": "professions-19", "front": "salesperson", "back": "vendedor(a)" },
+    { "id": "professions-20", "front": "engineer", "back": "engenheiro(a)" },
+    { "id": "professions-21", "front": "electrician", "back": "eletricista" },
+    { "id": "professions-22", "front": "businessman / businesswoman", "back": "empresário(a)" },
+    { "id": "professions-23", "front": "secretary", "back": "secretário(a)" },
+    { "id": "professions-24", "front": "cook / chef", "back": "cozinheiro(a)" },
+    { "id": "professions-25", "front": "camel vendor", "back": "camelô" },
+    { "id": "professions-26", "front": "hairdresser", "back": "cabeleireiro(a)" }
+  ]
+}
