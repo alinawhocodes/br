@@ -1,10 +1,30 @@
 import type { Topic, TopicSummary } from '../types';
 
 const topicModules = {
+  'topic-introductions-small-talk': () =>
+    import('./topic-introductions-small-talk.json').then((module) => module.default as Topic),
   'topic-telling-time': () => import('./topic-telling-time.json').then((module) => module.default as Topic),
 } as const;
 
 const topicSummaries: TopicSummary[] = [
+  {
+    id: 'topic-introductions-small-talk',
+    name: 'Introductions and Small Talk',
+    imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80',
+    taskCount: 10,
+    taskIds: [
+      'intro-small-talk-01',
+      'intro-small-talk-02',
+      'intro-small-talk-03',
+      'intro-small-talk-04',
+      'intro-small-talk-05',
+      'intro-small-talk-06',
+      'intro-small-talk-07',
+      'intro-small-talk-08',
+      'intro-small-talk-09',
+      'intro-small-talk-10',
+    ],
+  },
   {
     id: 'topic-telling-time',
     name: 'Telling Time',

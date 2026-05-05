@@ -5,3 +5,8 @@ export const normalizeAnswer = (value: string): string =>
 
 export const isAnswerMatch = (input: string, expected: string): boolean =>
   normalizeAnswer(input) === normalizeAnswer(expected);
+
+export const isAnswerMatchAny = (input: string, expectedOptions: string[]): boolean => {
+  const normalizedInput = normalizeAnswer(input);
+  return expectedOptions.some((option) => normalizeAnswer(option) === normalizedInput);
+};

@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { isPracticeMode, usePracticeSession } from '../hooks/usePracticeSession';
 import { recordTaskAttempt } from '../lib/stats';
-import { isAnswerMatch } from '../lib/tolerance';
+import { isAnswerMatchAny } from '../lib/tolerance';
 import type { SessionResult, SessionWrongAnswer } from '../types';
 
 type PracticeViewProps = {
@@ -59,8 +59,12 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
 
   const promptText =
     mode === 'flashcard-pt-en' ? session.currentTask?.back ?? '' : session.currentTask?.front ?? '';
-  const answerText =
-    mode === 'flashcard-pt-en' ? session.currentTask?.front ?? '' : session.currentTask?.back ?? '';
+  const answerOptions =
+    mode === 'flashcard-pt-en'
+      ? [session.currentTask?.front ?? '', ...(session.currentTask?.acceptedFronts ?? [])]
+      : [session.currentTask?.back ?? '', ...(session.currentTask?.acceptedBacks ?? [])];
+  const answerText = answerOptions.join(' / ');
+  const writeInExpectedOptions = [session.currentTask?.back ?? '', ...(session.currentTask?.acceptedBacks ?? [])];
 
   if (session.loading) {
     return <div className="flex min-h-screen items-center justify-center bg-sand-50 px-6 text-center text-lg text-ink-900">Loading...</div>;
@@ -145,7 +149,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
       return;
     }
 
-    const correct = isAnswerMatch(answer, session.currentTask.back);
+    const correct = isAnswerMatchAny(answer, writeInExpectedOptions);
     setSubmitting(true);
     setSubmissionError(null);
 
@@ -165,7 +169,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
             taskId: session.currentTask.id,
             prompt: session.currentTask.front,
             userAnswer: answer,
-            correctAnswer: session.currentTask.back,
+            correctAnswer: writeInExpectedOptions.join(' / '),
           },
         ]);
       }
@@ -238,7 +242,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
                 {!submissionError && feedbackState === 'wrong' ? (
                   <div className="text-center">
                     <p className="text-3xl font-medium text-terracotta-600">Incorrect</p>
-                    <p className="mt-4 text-2xl font-medium text-forest-700">{session.currentTask.back}</p>
+                    <p className="mt-4 text-2xl font-medium text-forest-700">{writeInExpectedOptions.join(' / ')}</p>
                   </div>
                 ) : null}
               </div>

@@ -2,6 +2,8 @@ export type Task = {
   id: string;
   front: string;
   back: string;
+  acceptedFronts?: string[];
+  acceptedBacks?: string[];
 };
 
 export type Topic = {

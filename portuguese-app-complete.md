@@ -138,6 +138,8 @@ All tasks share the same structure. Practice mode determines how they're present
   id: string
   front: string   // the prompt / question side
   back: string    // the answer side
+  acceptedBacks?: string[]   // optional additional valid answers for `back` (same direction)
+  acceptedFronts?: string[]  // optional additional valid answers for `front` (for reversed direction)
 }
 ```
 
@@ -162,11 +164,13 @@ Topic authoring rule: keep each topic task direction consistent (recommended: EN
 - After reveal: tap cross (not remembered) or check (remembered)
 - Performance recorded in Supabase (times_shown, times_correct per task per user based on ❌/✅)
 - Direction depends on which mode user selects (EN→PT shows English front, PT→EN shows Portuguese front)
+- On reveal, show all valid answer options for that card (canonical answer plus configured variants)
 
 #### Write-in
 - Show front as a question or fill-in-the-blank prompt
 - User types answer freely and submits
 - Graded with tolerance: trimmed, lowercased, diacritics normalised (falo = Falo = fàlo)
+- Per-card answer variants are accepted when configured (e.g. `acceptedBacks`)
 - If wrong: show correct answer before advancing
 - Performance recorded in Supabase (times_shown, times_correct per task per user)
 
@@ -218,7 +222,7 @@ Home → Topic Selection → Batch Selection (if 16+ tasks) → Mode Selection �
 Show front text only → tap practice area to reveal answer below → tap ❌/✅ to mark not remembered/remembered and advance to next card
 
 **Write-in behaviour:**
-Show front → user types answer into full-width input → Submit checks with tolerance matching and records stats → if correct, show "Correct" and Continue → if wrong, show "Incorrect" plus the correct answer and Continue
+Show front → user types answer into full-width input → Submit checks with tolerance matching across all configured valid options and records stats → if correct, show "Correct" and Continue → if wrong, show "Incorrect" plus the correct answer/options and Continue
 
 #### Results
 - Write-in: score (e.g. 8/12) + list of wrong answers with correct answers
