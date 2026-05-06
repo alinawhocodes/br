@@ -102,13 +102,17 @@ const topicSummaries: TopicSummary[] = [
     id: 'topic-classroom-portuguese',
     name: 'Classroom Portuguese',
     imageUrl: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80',
-    taskCount: 5,
+    taskCount: 9,
     taskIds: [
       'classroom-portuguese-01',
       'classroom-portuguese-02',
       'classroom-portuguese-03',
       'classroom-portuguese-04',
       'classroom-portuguese-05',
+      'classroom-portuguese-06',
+      'classroom-portuguese-07',
+      'classroom-portuguese-08',
+      'classroom-portuguese-09',
     ],
   },
   {

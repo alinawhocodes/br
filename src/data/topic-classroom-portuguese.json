@@ -7,6 +7,10 @@
     { "id": "classroom-portuguese-02", "front": "What is the meaning of ...?", "back": "Qual é o significado de ...?" },
     { "id": "classroom-portuguese-03", "front": "How do you pronounce ...?", "back": "Como se pronuncia ...?" },
     { "id": "classroom-portuguese-04", "front": "Can you repeat, please?", "back": "Você pode repetir, por favor?" },
-    { "id": "classroom-portuguese-05", "front": "I didn't understand.", "back": "Eu não entendi." }
+    { "id": "classroom-portuguese-05", "front": "I didn't understand.", "back": "Eu não entendi." },
+    { "id": "classroom-portuguese-06", "front": "When do I use \"o que\"?", "back": "Use \"o que\" for open questions (free answer)." },
+    { "id": "classroom-portuguese-07", "front": "When do I use \"qual\"?", "back": "Use \"qual\" for specific choice/value from options." },
+    { "id": "classroom-portuguese-08", "front": "What do you do at work?", "back": "O que você faz no trabalho?" },
+    { "id": "classroom-portuguese-09", "front": "Which language do you use?", "back": "Qual língua você usa?" }
   ]
 }
