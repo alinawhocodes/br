@@ -1,0 +1,62 @@
+{
+  "id": "topic-telling-time",
+  "name": "Telling Time",
+  "imageUrl": "https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=1200&q=80",
+  "tasks": [
+    { "id": "telling-time-01", "front": "What time is it?", "back": "Que horas são?" },
+    { "id": "telling-time-02", "front": "00:00", "back": "meia-noite" },
+    { "id": "telling-time-03", "front": "12:00", "back": "meio-dia" },
+    { "id": "telling-time-04", "front": "03:15", "back": "três e quinze" },
+    { "id": "telling-time-05", "front": "09:05", "back": "nove e cinco" },
+    { "id": "telling-time-06", "front": "10:23", "back": "dez e vinte e três" },
+    { "id": "telling-time-07", "front": "14:40", "back": "quatorze e quarenta", "acceptedBacks": ["duas e quarenta da tarde"] },
+    { "id": "telling-time-08", "front": "10:50", "back": "dez e cinquenta" },
+    {
+      "id": "telling-time-09",
+      "front": "18:55",
+      "back": "dezoito e cinquenta e cinco",
+      "acceptedBacks": ["seis e cinquenta e cinco da noite"]
+    },
+    {
+      "id": "telling-time-10",
+      "front": "15:40",
+      "back": "quinze e quarenta",
+      "acceptedBacks": ["três e quarenta da tarde"]
+    },
+    { "id": "telling-time-11", "front": "05:30", "back": "cinco e meia", "acceptedBacks": ["cinco e trinta", "cinco e meia da manhã"] },
+    { "id": "telling-time-12", "front": "06:50", "back": "dez para as sete", "acceptedBacks": ["seis e cinquenta"] },
+    {
+      "id": "telling-time-13",
+      "front": "20:00",
+      "back": "oito em ponto da noite",
+      "acceptedBacks": ["vinte horas", "oito da noite"]
+    },
+    { "id": "telling-time-14", "front": "01:00", "back": "uma da manhã", "acceptedBacks": ["uma hora da manhã"] },
+    { "id": "telling-time-15", "front": "11:59", "back": "onze e cinquenta e nove da manhã" },
+    { "id": "telling-time-16", "front": "13:00", "back": "uma da tarde", "acceptedBacks": ["treze horas"] },
+    {
+      "id": "telling-time-17",
+      "front": "18:59",
+      "back": "seis e cinquenta e nove da noite",
+      "acceptedBacks": ["dezoito e cinquenta e nove"]
+    },
+    { "id": "telling-time-18", "front": "19:00", "back": "sete da noite", "acceptedBacks": ["dezenove horas"] },
+    {
+      "id": "telling-time-19",
+      "front": "23:59",
+      "back": "onze e cinquenta e nove da noite",
+      "acceptedBacks": ["vinte e três e cinquenta e nove"]
+    },
+    {
+      "id": "telling-time-20",
+      "front": "30 minutes in 12-hour speech (am/pm style)",
+      "back": "e meia",
+      "acceptedBacks": ["e trinta"]
+    },
+    { "id": "telling-time-21", "front": "at (hours, plural)", "back": "às" },
+    { "id": "telling-time-22", "front": "at (one o'clock or midnight)", "back": "à" },
+    { "id": "telling-time-23", "front": "at noon", "back": "ao meio-dia" },
+    { "id": "telling-time-24", "front": "19:30", "back": "sete e meia da noite", "acceptedBacks": ["dezenove e trinta"] },
+    { "id": "telling-time-25", "front": "30 minutes in 24-hour reading", "back": "e trinta" }
+  ]
+}
