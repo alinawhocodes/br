@@ -37,6 +37,7 @@
     { "id": "daily-verbs-32", "front": "to touch / to play (an instrument)", "back": "tocar" },
     { "id": "daily-verbs-33", "front": "look", "back": "olhe" },
     { "id": "daily-verbs-34", "front": "listen", "back": "ouça" },
-    { "id": "daily-verbs-35", "front": "repeat", "back": "repita" }
+    { "id": "daily-verbs-35", "front": "repeat", "back": "repita" },
+    { "id": "daily-verbs-36", "front": "to sleep", "back": "dormir" }
   ]
 }

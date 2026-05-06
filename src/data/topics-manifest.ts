@@ -24,7 +24,7 @@ const topicSummaries: TopicSummary[] = [
     id: 'topic-daily-verbs',
     name: 'Daily Verbs',
     imageUrl: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80',
-    taskCount: 35,
+    taskCount: 36,
     taskIds: [
       'daily-verbs-01',
       'daily-verbs-02',
@@ -61,6 +61,7 @@ const topicSummaries: TopicSummary[] = [
       'daily-verbs-33',
       'daily-verbs-34',
       'daily-verbs-35',
+      'daily-verbs-36',
     ],
   },
   {
