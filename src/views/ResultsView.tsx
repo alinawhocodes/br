@@ -6,6 +6,7 @@ type ResultsLocationState = {
   result: SessionResult;
   topicId: string;
   batchId: string;
+  origin?: string;
 };
 
 export const ResultsView = () => {
@@ -27,9 +28,10 @@ export const ResultsView = () => {
   }
 
   const { result, topicId, batchId } = state;
+  const originQuery = state.origin ? `&origin=${encodeURIComponent(state.origin)}` : '';
   const retryIds = result.wrongAnswers.map((item) => item.taskId).join(',');
-  const retryUrl = `/topics/${topicId}/practice?mode=${result.mode}&batch=${batchId}&retry=${retryIds}`;
-  const restartUrl = `/topics/${topicId}/practice?mode=${result.mode}&batch=${batchId}`;
+  const retryUrl = `/topics/${topicId}/practice?mode=${result.mode}&batch=${batchId}&retry=${retryIds}${originQuery}`;
+  const restartUrl = `/topics/${topicId}/practice?mode=${result.mode}&batch=${batchId}${originQuery}`;
   const score = result.correctCount !== undefined && result.totalAnswered ? `${result.correctCount}/${result.totalAnswered}` : null;
 
   return (

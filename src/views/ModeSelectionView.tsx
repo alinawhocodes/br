@@ -12,11 +12,13 @@ export const ModeSelectionView = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const batchId = searchParams.get('batch') ?? 'all';
+  const origin = searchParams.get('origin');
+  const backUrl = topicId ? (origin === 'auto-skip' ? '/' : `/topics/${topicId}/batches`) : '/';
 
   return (
     <AppShell title="Choose a mode" subtitle="Flashcards and write-in sessions share the same topic data but present it differently.">
       <div className="mb-6">
-        <Link className="text-sm font-semibold text-forest-700" to={topicId ? `/topics/${topicId}/batches` : '/'}>
+        <Link className="text-sm font-semibold text-forest-700" to={backUrl}>
           Back
         </Link>
       </div>
@@ -25,7 +27,13 @@ export const ModeSelectionView = () => {
           <button
             key={mode.id}
             className="rounded-[1.5rem] border border-ink-800/10 bg-white px-5 py-5 text-left shadow-card"
-            onClick={() => navigate(`/topics/${topicId}/practice?batch=${batchId}&mode=${mode.id}`)}
+            onClick={() => {
+              const params = new URLSearchParams({ batch: batchId, mode: mode.id });
+              if (origin) {
+                params.set('origin', origin);
+              }
+              navigate(`/topics/${topicId}/practice?${params.toString()}`);
+            }}
             type="button"
           >
             <h2 className="text-lg font-semibold text-ink-900">{mode.title}</h2>

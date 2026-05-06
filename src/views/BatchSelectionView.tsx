@@ -25,7 +25,7 @@ export const BatchSelectionView = () => {
         }
 
         if (shouldSkipBatchSelection(loadedTopic.tasks.length)) {
-          navigate(`/topics/${loadedTopic.id}/modes?batch=all`, { replace: true });
+          navigate(`/topics/${loadedTopic.id}/modes?batch=all&origin=auto-skip`, { replace: true });
           return;
         }
 

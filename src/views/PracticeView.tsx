@@ -21,9 +21,10 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
   const modeParam = searchParams.get('mode');
   const mode = isPracticeMode(modeParam) ? modeParam : null;
   const batch = searchParams.get('batch') ?? 'all';
+  const origin = searchParams.get('origin');
   const retryParam = searchParams.get('retry');
   const retryTaskIds = useMemo(() => (retryParam ? retryParam.split(',').filter(Boolean) : []), [retryParam]);
-  const backToModes = topicId ? `/topics/${topicId}/modes?batch=${batch}` : '/';
+  const backToModes = topicId ? `/topics/${topicId}/modes?batch=${batch}${origin ? `&origin=${origin}` : ''}` : '/';
   const session = usePracticeSession({
     topicId,
     batchId: batch,
@@ -133,6 +134,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
             result,
             topicId,
             batchId: batch,
+            origin,
           },
         });
         return;
@@ -210,6 +212,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
             result,
             topicId,
             batchId: batch,
+            origin,
           },
         });
       } catch (error) {
