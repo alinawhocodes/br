@@ -4,48 +4,58 @@
   "imageUrl": "https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=1200&q=80",
   "tasks": [
     { "id": "telling-time-01", "front": "What time is it?", "back": "Que horas são?" },
-    { "id": "telling-time-02", "front": "00:00", "back": "meia-noite" },
-    { "id": "telling-time-03", "front": "12:00", "back": "meio-dia" },
-    { "id": "telling-time-04", "front": "03:15", "back": "três e quinze" },
-    { "id": "telling-time-05", "front": "09:05", "back": "nove e cinco" },
-    { "id": "telling-time-06", "front": "10:23", "back": "dez e vinte e três" },
-    { "id": "telling-time-07", "front": "14:40", "back": "quatorze e quarenta", "acceptedBacks": ["duas e quarenta da tarde"] },
-    { "id": "telling-time-08", "front": "10:50", "back": "dez e cinquenta" },
+    { "id": "telling-time-02", "front": "00:00", "back": "é meia-noite", "acceptedBacks": ["meia-noite"] },
+    { "id": "telling-time-03", "front": "12:00", "back": "é meio-dia", "acceptedBacks": ["meio-dia"] },
+    { "id": "telling-time-04", "front": "03:15", "back": "são três e quinze", "acceptedBacks": ["três e quinze"] },
+    { "id": "telling-time-05", "front": "09:05", "back": "são nove e cinco", "acceptedBacks": ["nove e cinco"] },
+    { "id": "telling-time-06", "front": "10:23", "back": "são dez e vinte e três", "acceptedBacks": ["dez e vinte e três"] },
+    {
+      "id": "telling-time-07",
+      "front": "14:40",
+      "back": "são quatorze e quarenta",
+      "acceptedBacks": ["quatorze e quarenta", "duas e quarenta da tarde", "são duas e quarenta da tarde"]
+    },
+    { "id": "telling-time-08", "front": "10:50", "back": "são dez e cinquenta", "acceptedBacks": ["dez e cinquenta"] },
     {
       "id": "telling-time-09",
       "front": "18:55",
-      "back": "dezoito e cinquenta e cinco",
-      "acceptedBacks": ["seis e cinquenta e cinco da noite"]
+      "back": "são dezoito e cinquenta e cinco",
+      "acceptedBacks": ["dezoito e cinquenta e cinco", "seis e cinquenta e cinco da noite", "são seis e cinquenta e cinco da noite"]
     },
     {
       "id": "telling-time-10",
       "front": "15:40",
-      "back": "quinze e quarenta",
-      "acceptedBacks": ["três e quarenta da tarde"]
+      "back": "são quinze e quarenta",
+      "acceptedBacks": ["quinze e quarenta", "três e quarenta da tarde", "são três e quarenta da tarde"]
     },
-    { "id": "telling-time-11", "front": "05:30", "back": "cinco e meia", "acceptedBacks": ["cinco e trinta", "cinco e meia da manhã"] },
-    { "id": "telling-time-12", "front": "06:50", "back": "dez para as sete", "acceptedBacks": ["seis e cinquenta"] },
+    {
+      "id": "telling-time-11",
+      "front": "05:30",
+      "back": "são cinco e meia",
+      "acceptedBacks": ["cinco e meia", "cinco e trinta", "cinco e meia da manhã", "são cinco e trinta", "são cinco e meia da manhã"]
+    },
+    { "id": "telling-time-12", "front": "06:50", "back": "são dez para as sete", "acceptedBacks": ["dez para as sete", "seis e cinquenta", "são seis e cinquenta"] },
     {
       "id": "telling-time-13",
       "front": "20:00",
-      "back": "oito em ponto da noite",
-      "acceptedBacks": ["vinte horas", "oito da noite"]
+      "back": "são oito em ponto da noite",
+      "acceptedBacks": ["oito em ponto da noite", "vinte horas", "oito da noite", "são vinte horas", "são oito da noite"]
     },
-    { "id": "telling-time-14", "front": "01:00", "back": "uma da manhã", "acceptedBacks": ["uma hora da manhã"] },
-    { "id": "telling-time-15", "front": "11:59", "back": "onze e cinquenta e nove da manhã" },
-    { "id": "telling-time-16", "front": "13:00", "back": "uma da tarde", "acceptedBacks": ["treze horas"] },
+    { "id": "telling-time-14", "front": "01:00", "back": "é uma da manhã", "acceptedBacks": ["uma da manhã", "uma hora da manhã", "é uma hora da manhã"] },
+    { "id": "telling-time-15", "front": "11:59", "back": "são onze e cinquenta e nove da manhã", "acceptedBacks": ["onze e cinquenta e nove da manhã"] },
+    { "id": "telling-time-16", "front": "13:00", "back": "é uma da tarde", "acceptedBacks": ["uma da tarde", "treze horas", "são treze horas"] },
     {
       "id": "telling-time-17",
       "front": "18:59",
-      "back": "seis e cinquenta e nove da noite",
-      "acceptedBacks": ["dezoito e cinquenta e nove"]
+      "back": "são seis e cinquenta e nove da noite",
+      "acceptedBacks": ["seis e cinquenta e nove da noite", "dezoito e cinquenta e nove", "são dezoito e cinquenta e nove"]
     },
-    { "id": "telling-time-18", "front": "19:00", "back": "sete da noite", "acceptedBacks": ["dezenove horas"] },
+    { "id": "telling-time-18", "front": "19:00", "back": "são sete da noite", "acceptedBacks": ["sete da noite", "dezenove horas", "são dezenove horas"] },
     {
       "id": "telling-time-19",
       "front": "23:59",
-      "back": "onze e cinquenta e nove da noite",
-      "acceptedBacks": ["vinte e três e cinquenta e nove"]
+      "back": "são onze e cinquenta e nove da noite",
+      "acceptedBacks": ["onze e cinquenta e nove da noite", "vinte e três e cinquenta e nove", "são vinte e três e cinquenta e nove"]
     },
     {
       "id": "telling-time-20",
@@ -56,7 +66,45 @@
     { "id": "telling-time-21", "front": "at (hours, plural)", "back": "às" },
     { "id": "telling-time-22", "front": "at (one o'clock or midnight)", "back": "à" },
     { "id": "telling-time-23", "front": "at noon", "back": "ao meio-dia" },
-    { "id": "telling-time-24", "front": "19:30", "back": "sete e meia da noite", "acceptedBacks": ["dezenove e trinta"] },
-    { "id": "telling-time-25", "front": "30 minutes in 24-hour reading", "back": "e trinta" }
+    {
+      "id": "telling-time-24",
+      "front": "19:30",
+      "back": "são sete e meia da noite",
+      "acceptedBacks": ["sete e meia da noite", "dezenove e trinta", "são dezenove e trinta"]
+    },
+    { "id": "telling-time-25", "front": "30 minutes in 24-hour reading", "back": "e trinta" },
+    {
+      "id": "telling-time-26",
+      "front": "16:30",
+      "back": "são dezesseis e trinta",
+      "acceptedBacks": ["dezesseis e trinta", "quatro e meia", "são quatro e meia", "quatro e meia da tarde", "são quatro e meia da tarde"]
+    },
+    { "id": "telling-time-27", "front": "10:30", "back": "são dez e meia", "acceptedBacks": ["dez e meia", "dez e trinta", "são dez e trinta"] },
+    {
+      "id": "telling-time-28",
+      "front": "9:45",
+      "back": "são quinze para as dez",
+      "acceptedBacks": ["nove e quarenta e cinco", "são nove e quarenta e cinco"]
+    },
+    {
+      "id": "telling-time-29",
+      "front": "1:00",
+      "back": "é uma hora",
+      "acceptedBacks": ["uma hora", "é uma hora em ponto", "uma da manhã", "é uma da manhã"]
+    },
+    { "id": "telling-time-30", "front": "3:40", "back": "são vinte para as quatro", "acceptedBacks": ["vinte para as quatro", "três e quarenta", "são três e quarenta"] },
+    {
+      "id": "telling-time-31",
+      "front": "21:15",
+      "back": "são nove e quinze da noite",
+      "acceptedBacks": ["nove e quinze da noite", "são vinte e uma e quinze", "vinte e uma e quinze"]
+    },
+    {
+      "id": "telling-time-32",
+      "front": "11:50",
+      "back": "são dez para o meio-dia",
+      "acceptedBacks": ["dez para o meio-dia", "onze e cinquenta", "são onze e cinquenta"]
+    },
+    { "id": "telling-time-33", "front": "24:00", "back": "é meia-noite", "acceptedBacks": ["meia-noite"] }
   ]
 }

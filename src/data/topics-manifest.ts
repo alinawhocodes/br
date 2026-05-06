@@ -283,7 +283,7 @@ const topicSummaries: TopicSummary[] = [
     id: 'topic-telling-time',
     name: 'Telling Time',
     imageUrl: 'https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=1200&q=80',
-    taskCount: 25,
+    taskCount: 33,
     taskIds: [
       'telling-time-01',
       'telling-time-02',
@@ -310,6 +310,14 @@ const topicSummaries: TopicSummary[] = [
       'telling-time-23',
       'telling-time-24',
       'telling-time-25',
+      'telling-time-26',
+      'telling-time-27',
+      'telling-time-28',
+      'telling-time-29',
+      'telling-time-30',
+      'telling-time-31',
+      'telling-time-32',
+      'telling-time-33',
     ],
   },
   {
