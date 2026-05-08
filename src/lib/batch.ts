@@ -1,9 +1,9 @@
 import type { BatchOption, Task } from '../types';
 
-const MIN_BATCH_SIZE = 8;
-const MAX_BATCH_SIZE = 15;
+const MIN_BATCH_SIZE = 1;
+const MAX_BATCH_SIZE = 10;
 
-export const shouldSkipBatchSelection = (taskCount: number): boolean => taskCount <= 15;
+export const shouldSkipBatchSelection = (taskCount: number): boolean => taskCount <= 10;
 
 export const buildBatchOptions = (tasks: Task[]): BatchOption[] => {
   if (shouldSkipBatchSelection(tasks.length)) {

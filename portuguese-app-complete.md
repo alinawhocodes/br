@@ -177,8 +177,8 @@ Topic authoring rule: keep each topic task direction consistent (recommended: EN
 ---
 
 ### Batching
-- ≤15 tasks → skip batch screen, go straight to Mode Selection
-- 16+ tasks → split into sequential batches of 8–15 (as evenly as possible)
+- ≤10 tasks → skip batch screen, go straight to Mode Selection
+- 11+ tasks → split into sequential batches of up to 10 (as evenly as possible)
 - Batches are sequential slices by array index order in the JSON
 - Batch Selection screen shows: Batch 1, Batch 2... (each with task count) + "All" option
 
@@ -186,7 +186,7 @@ Topic authoring rule: keep each topic task direction consistent (recommended: EN
 
 ### Navigation Flow
 ```
-Home → Topic Selection → Batch Selection (if 16+ tasks) → Mode Selection → Practice → Results
+Home → Topic Selection → Batch Selection (if 11+ tasks) → Mode Selection → Practice → Results
 ```
 
 ---
@@ -201,7 +201,7 @@ Home → Topic Selection → Batch Selection (if 16+ tasks) → Mode Selection �
 - In `worst performance first`, topics with no data are treated as `0%` and shown first
 - Tap card body → proceed
 
-#### Batch Selection (only if 16+ tasks)
+#### Batch Selection (only if 11+ tasks)
 - Batch 1, Batch 2... each showing task count
 - "All" option
 
@@ -326,7 +326,7 @@ src/
     supabase.ts     # Supabase client init from .env
     stats.ts        # read/write task_stats to Supabase
     tolerance.ts    # answer matching (trim, lowercase, diacritics normalised)
-    batch.ts        # batching logic (split array into batches of 8-15)
+    batch.ts        # batching logic (split array into batches of up to 10)
   types/
     index.ts        # Task, Topic, SessionResult, TaskStat, PracticeMode types
 ```
