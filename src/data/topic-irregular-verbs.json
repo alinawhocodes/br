@@ -56,6 +56,13 @@
     { "id": "irregular-verbs-47", "front": "you all are (temp/sensation)", "back": "vocês estão" },
     { "id": "irregular-verbs-48", "front": "they (masc./mixed) are (temp/sensation)", "back": "eles estão" },
     { "id": "irregular-verbs-49", "front": "they (fem.) are (temp/sensation)", "back": "elas estão" },
-    { "id": "irregular-verbs-50", "front": "we (informal) are (temp/sensation)", "back": "a gente está" }
+    { "id": "irregular-verbs-50", "front": "we (informal) are (temp/sensation)", "back": "a gente está" },
+
+    { "id": "irregular-verbs-51", "front": "The boy has a pain in the knee.", "back": "O rapaz está com dor no joelho." },
+    { "id": "irregular-verbs-52", "front": "The man has a headache.", "back": "O homem está com dor de cabeça." },
+    { "id": "irregular-verbs-53", "front": "The boy is thirsty.", "back": "O rapaz está com sede." },
+    { "id": "irregular-verbs-54", "front": "The woman is hungry.", "back": "A mulher está com fome." },
+    { "id": "irregular-verbs-55", "front": "The baby is sleepy.", "back": "O bebê está com sono." },
+    { "id": "irregular-verbs-56", "front": "The boy is cold.", "back": "O menino está com frio." }
   ]
 }
