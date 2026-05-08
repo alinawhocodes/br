@@ -1,0 +1,28 @@
+{
+  "id": "topic-everyday-words-expressions",
+  "name": "Everyday Words and Expressions",
+  "imageUrl": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80",
+  "tasks": [
+    { "id": "everyday-words-01", "front": "work", "back": "trabalho" },
+    { "id": "everyday-words-02", "front": "now", "back": "agora" },
+    { "id": "everyday-words-03", "front": "but", "back": "mas" },
+    { "id": "everyday-words-04", "front": "madness", "back": "loucura" },
+    { "id": "everyday-words-05", "front": "to fire someone", "back": "demitir" },
+    { "id": "everyday-words-06", "front": "employee", "back": "funcionário", "acceptedBacks": ["funcionária"] },
+    { "id": "everyday-words-07", "front": "early", "back": "adiantado", "acceptedBacks": ["adiantada"] },
+    { "id": "everyday-words-08", "front": "on time", "back": "pontual" },
+    { "id": "everyday-words-09", "front": "late", "back": "atrasado", "acceptedBacks": ["atrasada"] },
+    { "id": "everyday-words-10", "front": "expensive", "back": "caro", "acceptedBacks": ["cara"] },
+    { "id": "everyday-words-11", "front": "cheap", "back": "barato", "acceptedBacks": ["barata"] },
+    { "id": "everyday-words-12", "front": "routine", "back": "rotina" },
+    { "id": "everyday-words-13", "front": "Go to hell!", "back": "Vai para o inferno!" },
+    { "id": "everyday-words-14", "front": "tomorrow", "back": "amanhã" },
+    { "id": "everyday-words-15", "front": "surgery", "back": "cirurgia" },
+    { "id": "everyday-words-16", "front": "boyfriend", "back": "namorado" },
+    { "id": "everyday-words-17", "front": "girlfriend", "back": "namorada" },
+    { "id": "everyday-words-18", "front": "turtle", "back": "tartaruga" },
+    { "id": "everyday-words-19", "front": "notebook", "back": "caderno" },
+    { "id": "everyday-words-20", "front": "sick leave", "back": "licença médica" },
+    { "id": "everyday-words-21", "front": "My boss fires the employees.", "back": "O meu chefe demite os funcionários." }
+  ]
+}

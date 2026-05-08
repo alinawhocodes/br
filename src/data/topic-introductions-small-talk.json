@@ -30,6 +30,12 @@
     { "id": "intro-small-talk-10", "front": "I'm great. (female speaker)", "back": "Eu estou ótima." },
     { "id": "intro-small-talk-11", "front": "How old is he/she?", "back": "Quantos anos ele/ela tem?" },
     { "id": "intro-small-talk-12", "front": "He/She is ... years old.", "back": "Ele/ela tem ... anos." },
-    { "id": "intro-small-talk-13", "front": "I think that...", "back": "Eu acho que..." }
+    { "id": "intro-small-talk-13", "front": "I think that...", "back": "Eu acho que..." },
+    { "id": "intro-small-talk-14", "front": "That's cool!", "back": "Que legal!" },
+    { "id": "intro-small-talk-15", "front": "OK? OK!", "back": "Beleza? Beleza!" },
+    { "id": "intro-small-talk-16", "front": "wow!", "back": "Nossa!" },
+    { "id": "intro-small-talk-17", "front": "Have a great weekend!", "back": "Bom fim de semana!" },
+    { "id": "intro-small-talk-18", "front": "for you too", "back": "pra você também" },
+    { "id": "intro-small-talk-19", "front": "That's right!", "back": "Isso!" }
   ]
 }

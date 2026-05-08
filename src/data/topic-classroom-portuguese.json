@@ -11,6 +11,12 @@
     { "id": "classroom-portuguese-06", "front": "When do I use \"o que\"?", "back": "Use \"o que\" for open questions (free answer)." },
     { "id": "classroom-portuguese-07", "front": "When do I use \"qual\"?", "back": "Use \"qual\" for specific choice/value from options." },
     { "id": "classroom-portuguese-08", "front": "What do you do at work?", "back": "O que você faz no trabalho?" },
-    { "id": "classroom-portuguese-09", "front": "Which language do you use?", "back": "Qual língua você usa?" }
+    { "id": "classroom-portuguese-09", "front": "Which language do you use?", "back": "Qual língua você usa?" },
+    { "id": "classroom-portuguese-10", "front": "What is this?", "back": "O que é isso?" },
+    { "id": "classroom-portuguese-11", "front": "warm-up", "back": "aquecimento" },
+    { "id": "classroom-portuguese-12", "front": "I'll open it here!", "back": "Já vou abrir aqui!" },
+    { "id": "classroom-portuguese-13", "front": "Reading", "back": "Leitura" },
+    { "id": "classroom-portuguese-14", "front": "Listening (oral comprehension)", "back": "Compreensão oral" },
+    { "id": "classroom-portuguese-15", "front": "Stretch your body", "back": "Esticar o corpo" }
   ]
 }
