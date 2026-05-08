@@ -1,5 +1,8 @@
+import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AppShell } from '../components/AppShell';
+import { loadTopic } from '../hooks/useTopics';
+import { shouldSkipBatchSelection } from '../lib/batch';
 import type { SessionResult } from '../types';
 
 type ResultsLocationState = {
@@ -13,6 +16,8 @@ export const ResultsView = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const state = location.state as ResultsLocationState | null;
+  const [nextSelectionUrl, setNextSelectionUrl] = useState('/');
+  const [nextSelectionLabel, setNextSelectionLabel] = useState('Back to Home');
 
   if (!state?.result || !state.topicId) {
     return (
@@ -33,6 +38,38 @@ export const ResultsView = () => {
   const retryUrl = `/topics/${topicId}/practice?mode=${result.mode}&batch=${batchId}&retry=${retryIds}${originQuery}`;
   const restartUrl = `/topics/${topicId}/practice?mode=${result.mode}&batch=${batchId}${originQuery}`;
   const score = result.correctCount !== undefined && result.totalAnswered ? `${result.correctCount}/${result.totalAnswered}` : null;
+
+  useEffect(() => {
+    let isActive = true;
+
+    loadTopic(topicId)
+      .then((topic) => {
+        if (!isActive || !topic) {
+          return;
+        }
+
+        if (shouldSkipBatchSelection(topic.tasks.length)) {
+          setNextSelectionUrl(`/topics/${topic.id}/modes?batch=all&origin=auto-skip`);
+          setNextSelectionLabel('Mode Selection');
+          return;
+        }
+
+        setNextSelectionUrl(`/topics/${topic.id}/batches`);
+        setNextSelectionLabel('Batch Selection');
+      })
+      .catch(() => {
+        if (!isActive) {
+          return;
+        }
+
+        setNextSelectionUrl('/');
+        setNextSelectionLabel('Back to Home');
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, [topicId]);
 
   return (
     <AppShell title="Results" subtitle="Session summary and quick actions for what to practice next.">
@@ -64,7 +101,7 @@ export const ResultsView = () => {
         </div>
       ) : null}
 
-      <div className="mt-8 grid gap-3 sm:grid-cols-3">
+      <div className="mt-8 grid gap-3 sm:grid-cols-4">
         <button
           className="rounded-full border border-ink-800/15 px-5 py-3 text-sm font-semibold text-ink-900 disabled:opacity-50"
           type="button"
@@ -76,6 +113,9 @@ export const ResultsView = () => {
         <button className="rounded-full border border-ink-800/15 px-5 py-3 text-sm font-semibold text-ink-900" type="button" onClick={() => navigate(restartUrl)}>
           Restart
         </button>
+        <Link className="rounded-full border border-ink-800/15 px-5 py-3 text-center text-sm font-semibold text-ink-900" to={nextSelectionUrl}>
+          {nextSelectionLabel}
+        </Link>
         <Link className="rounded-full bg-ink-900 px-5 py-3 text-center text-sm font-semibold text-white" to="/">
           Back to Home
         </Link>

@@ -230,7 +230,7 @@ Show front → user types answer into full-width input → Submit checks with to
 #### Results
 - Write-in: score (e.g. 8/12) + list of wrong answers with correct answers
 - Flashcards: score based on check/cross marks + list of not remembered cards
-- Actions: Retry wrong answers, Restart, Back to Home
+- Actions: Retry wrong answers, Restart, Batch Selection (if topic has 11+ tasks) / Mode Selection (if topic has 10 or fewer tasks), Back to Home
 - `Retry wrong answers` is intentionally scoped to only the missed cards from the finished session (not the whole batch), to focus practice where it is needed most
 - In wrong-answer details: write-in shows "Your answer" + "Correct"; flashcards show only the prompt and the correct answer (no redundant "Your answer" line)
 
