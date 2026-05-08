@@ -1,0 +1,36 @@
+{
+  "id": "topic-possessive-pronouns-nouns",
+  "name": "Possessive Pronouns (Nouns)",
+  "imageUrl": "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&fit=crop&w=1200&q=80",
+  "tasks": [
+    { "id": "possessive-nouns-01", "front": "my notebook", "back": "meu caderno" },
+    { "id": "possessive-nouns-02", "front": "my pen", "back": "minha caneta" },
+    { "id": "possessive-nouns-03", "front": "my glasses", "back": "meus óculos" },
+    { "id": "possessive-nouns-04", "front": "my pens", "back": "minhas canetas" },
+
+    { "id": "possessive-nouns-05", "front": "your cell phone", "back": "seu celular" },
+    { "id": "possessive-nouns-06", "front": "your calculator", "back": "sua calculadora" },
+    { "id": "possessive-nouns-07", "front": "your notebooks", "back": "seus cadernos" },
+    { "id": "possessive-nouns-08", "front": "your rulers", "back": "suas réguas" },
+
+    { "id": "possessive-nouns-09", "front": "his computer", "back": "computador dele" },
+    { "id": "possessive-nouns-10", "front": "her bag", "back": "bolsa dela" },
+    { "id": "possessive-nouns-11", "front": "their pencils", "back": "lápis deles" },
+    { "id": "possessive-nouns-12", "front": "their scissors", "back": "tesouras delas" },
+
+    { "id": "possessive-nouns-13", "front": "our notepad", "back": "nosso bloco de anotações" },
+    { "id": "possessive-nouns-14", "front": "our bag", "back": "nossa bolsa" },
+    { "id": "possessive-nouns-15", "front": "our staplers", "back": "nossos grampeadores" },
+    { "id": "possessive-nouns-16", "front": "our calculators", "back": "nossas calculadoras" },
+
+    { "id": "possessive-nouns-17", "front": "my male friend", "back": "meu amigo" },
+    { "id": "possessive-nouns-18", "front": "my female friend", "back": "minha amiga" },
+    { "id": "possessive-nouns-19", "front": "your brother", "back": "seu irmão" },
+    { "id": "possessive-nouns-20", "front": "your sister", "back": "sua irmã" },
+
+    { "id": "possessive-nouns-21", "front": "his colleague", "back": "colega dele" },
+    { "id": "possessive-nouns-22", "front": "her colleagues", "back": "colegas dela" },
+    { "id": "possessive-nouns-23", "front": "our friends", "back": "nossos amigos" },
+    { "id": "possessive-nouns-24", "front": "our sisters", "back": "nossas irmãs" }
+  ]
+}

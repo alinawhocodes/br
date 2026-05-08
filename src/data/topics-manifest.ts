@@ -12,6 +12,8 @@ const topicModules = {
   'topic-locations-and-prepositions': () =>
     import('./topic-locations-and-prepositions.json').then((module) => module.default as Topic),
   'topic-numbers': () => import('./topic-numbers.json').then((module) => module.default as Topic),
+  'topic-possessive-pronouns-nouns': () =>
+    import('./topic-possessive-pronouns-nouns.json').then((module) => module.default as Topic),
   'topic-professions': () => import('./topic-professions.json').then((module) => module.default as Topic),
   'topic-ser-identity-descriptions': () =>
     import('./topic-ser-identity-descriptions.json').then((module) => module.default as Topic),
@@ -224,6 +226,30 @@ const topicSummaries: TopicSummary[] = [
       'numbers-41',
       'numbers-42',
       'numbers-43',
+    ],
+  },
+  {
+    id: 'topic-possessive-pronouns-nouns',
+    name: 'Possessive Pronouns (Nouns)',
+    imageUrl: 'https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&fit=crop&w=1200&q=80',
+    taskCount: 16,
+    taskIds: [
+      'possessive-nouns-01',
+      'possessive-nouns-02',
+      'possessive-nouns-03',
+      'possessive-nouns-04',
+      'possessive-nouns-05',
+      'possessive-nouns-06',
+      'possessive-nouns-07',
+      'possessive-nouns-08',
+      'possessive-nouns-09',
+      'possessive-nouns-10',
+      'possessive-nouns-11',
+      'possessive-nouns-12',
+      'possessive-nouns-13',
+      'possessive-nouns-14',
+      'possessive-nouns-15',
+      'possessive-nouns-16',
     ],
   },
   {
