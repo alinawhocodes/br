@@ -76,15 +76,15 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
   const isTypedMode = mode === 'write-in' || mode === 'fill-in';
 
   if (session.loading) {
-    return <div className="flex min-h-screen items-center justify-center bg-sand-50 px-6 text-center text-lg text-ink-900">Loading...</div>;
+    return <div className="app-viewport flex items-center justify-center bg-sand-50 px-6 text-center text-lg text-ink-900">Loading...</div>;
   }
 
   if (session.error) {
-    return <div className="flex min-h-screen items-center justify-center bg-sand-50 px-6 text-center text-lg text-terracotta-600">{session.error}</div>;
+    return <div className="app-viewport flex items-center justify-center bg-sand-50 px-6 text-center text-lg text-terracotta-600">{session.error}</div>;
   }
 
   if (!session.currentTask) {
-    return <div className="flex min-h-screen items-center justify-center bg-sand-50 px-6 text-center text-lg text-ink-900">No tasks available.</div>;
+    return <div className="app-viewport flex items-center justify-center bg-sand-50 px-6 text-center text-lg text-ink-900">No tasks available.</div>;
   }
 
   const handlePracticeAreaClick = () => {
@@ -228,14 +228,14 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-sand-50">
+    <div className="app-viewport flex flex-col bg-sand-50">
       <div className="flex items-start justify-between px-6 pb-4 pt-6">
         <Link className="text-2xl font-semibold text-forest-700" to={backToModes}>
           Back
         </Link>
       </div>
 
-      <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6 pb-6">
+      <div className="safe-bottom mx-auto flex w-full max-w-3xl flex-1 flex-col px-6">
         {isTypedMode ? (
           <div className="flex flex-1 flex-col">
             <div className="flex flex-1 flex-col justify-center">

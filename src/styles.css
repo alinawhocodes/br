@@ -24,6 +24,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  min-height: 100svh;
 }
 
 button,
@@ -35,4 +36,20 @@ select {
 
 #root {
   min-height: 100vh;
+  min-height: 100svh;
+}
+
+.app-viewport {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+@supports (min-height: 100dvh) {
+  .app-viewport {
+    min-height: 100dvh;
+  }
+}
+
+.safe-bottom {
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
 }

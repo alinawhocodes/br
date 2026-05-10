@@ -234,6 +234,7 @@ Home → Topic Selection → Batch Selection (if 11+ tasks) → Mode Selection �
 - Back button sits in the top-left corner
 - Back button uses large, high-visibility text sizing
 - Answer reveal must not shift the layout; reserve space for the revealed answer
+- Practice screens must use mobile-safe viewport height (`svh`/`dvh`) plus bottom safe-area padding so bottom buttons remain visible on real iOS Safari with the address bar/home indicator.
 - Random order within selected batch
 - Session ends automatically after one full pass through the selected cards
 - Back from Practice should return to Mode Selection for the current topic and selected batch
