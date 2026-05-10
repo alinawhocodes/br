@@ -323,6 +323,7 @@ Stats are committed per completed session (batched), not per individual in-sessi
 - RLS enforced on all Supabase tables
 - .env never committed to repo
 - vite build → upload to your hosting, no server to maintain
+- GitHub Pages deployment under `/br/` must use the Vite `base` path as the React Router basename, and publish `404.html` as a copy of `index.html` so hard-refreshing nested client routes works.
 
 ---
 
