@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { fetchTaskStats } from '../lib/stats';
 import { getTopicSummaryStatIds } from '../lib/practiceTasks';
+import { getReviewDueCount, REVIEW_SESSION_CARD_LIMIT } from '../lib/review';
 import type { TaskStat, TopicSummary } from '../types';
 
 type TopicRate = {
@@ -13,6 +14,8 @@ type StatsState = {
   loading: boolean;
   error: string | null;
   topicRates: Record<string, TopicRate>;
+  reviewDueCount: number;
+  reviewQueueCount: number;
 };
 
 const buildRates = (topics: TopicSummary[], stats: TaskStat[]): Record<string, TopicRate> =>
@@ -41,6 +44,8 @@ export const useStats = (userId: string | null, topics: TopicSummary[]) => {
     loading: false,
     error: null,
     topicRates: {},
+    reviewDueCount: 0,
+    reviewQueueCount: 0,
   });
 
   const taskIds = useMemo(() => topics.flatMap((topic) => getTopicSummaryStatIds(topic)), [topics]);
@@ -51,6 +56,8 @@ export const useStats = (userId: string | null, topics: TopicSummary[]) => {
         loading: false,
         error: null,
         topicRates: buildRates(topics, []),
+        reviewDueCount: 0,
+        reviewQueueCount: 0,
       });
       return;
     }
@@ -65,10 +72,14 @@ export const useStats = (userId: string | null, topics: TopicSummary[]) => {
           return;
         }
 
+        const reviewDueCount = getReviewDueCount(taskIds, stats);
+
         setState({
           loading: false,
           error: null,
           topicRates: buildRates(topics, stats),
+          reviewDueCount,
+          reviewQueueCount: Math.min(reviewDueCount, REVIEW_SESSION_CARD_LIMIT),
         });
       })
       .catch((error: unknown) => {
@@ -80,6 +91,8 @@ export const useStats = (userId: string | null, topics: TopicSummary[]) => {
           loading: false,
           error: error instanceof Error ? error.message : 'Unable to load stats.',
           topicRates: buildRates(topics, []),
+          reviewDueCount: 0,
+          reviewQueueCount: 0,
         });
       });
 

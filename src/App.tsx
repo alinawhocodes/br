@@ -8,6 +8,8 @@ import { ModeSelectionView } from './views/ModeSelectionView';
 import { PracticeView } from './views/PracticeView';
 import { RegisterView } from './views/RegisterView';
 import { ResultsView } from './views/ResultsView';
+import { ReviewModeSelectionView } from './views/ReviewModeSelectionView';
+import { ReviewPracticeView } from './views/ReviewPracticeView';
 import { WaitingView } from './views/WaitingView';
 
 const LoadingScreen = () => (
@@ -53,6 +55,8 @@ function App() {
       <Route path="/topics/:topicId/batches" element={<BatchSelectionView userId={auth.user.id} />} />
       <Route path="/topics/:topicId/modes" element={<ModeSelectionView />} />
       <Route path="/topics/:topicId/practice" element={<PracticeView userId={auth.user.id} />} />
+      <Route path="/review/modes" element={<ReviewModeSelectionView userId={auth.user.id} />} />
+      <Route path="/review/practice" element={<ReviewPracticeView userId={auth.user.id} />} />
       <Route path="/results" element={<ResultsView />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

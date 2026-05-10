@@ -7,9 +7,10 @@ import type { SessionResult } from '../types';
 
 type ResultsLocationState = {
   result: SessionResult;
-  topicId: string;
-  batchId: string;
+  topicId?: string;
+  batchId?: string;
   origin?: string;
+  review?: boolean;
 };
 
 export const ResultsView = () => {
@@ -19,7 +20,7 @@ export const ResultsView = () => {
   const [nextSelectionUrl, setNextSelectionUrl] = useState('/');
   const [nextSelectionLabel, setNextSelectionLabel] = useState('Back to Home');
 
-  if (!state?.result || !state.topicId) {
+  if (!state?.result || (!state.review && !state.topicId)) {
     return (
       <AppShell title="Results" subtitle="No completed session was found for this view.">
         <div className="rounded-[1.5rem] bg-sand-50 p-6">
@@ -32,14 +33,26 @@ export const ResultsView = () => {
     );
   }
 
-  const { result, topicId, batchId } = state;
+  const { result } = state;
+  const topicId = state.topicId ?? '';
+  const batchId = state.batchId ?? 'all';
   const originQuery = state.origin ? `&origin=${encodeURIComponent(state.origin)}` : '';
   const retryIds = result.wrongAnswers.map((item) => item.taskId).join(',');
-  const retryUrl = `/topics/${topicId}/practice?mode=${result.mode}&batch=${batchId}&retry=${retryIds}${originQuery}`;
-  const restartUrl = `/topics/${topicId}/practice?mode=${result.mode}&batch=${batchId}${originQuery}`;
+  const retryUrl = state.review
+    ? `/review/practice?mode=${result.mode}&retry=${retryIds}`
+    : `/topics/${topicId}/practice?mode=${result.mode}&batch=${batchId}&retry=${retryIds}${originQuery}`;
+  const restartUrl = state.review
+    ? `/review/practice?mode=${result.mode}`
+    : `/topics/${topicId}/practice?mode=${result.mode}&batch=${batchId}${originQuery}`;
   const score = result.correctCount !== undefined && result.totalAnswered ? `${result.correctCount}/${result.totalAnswered}` : null;
 
   useEffect(() => {
+    if (state.review) {
+      setNextSelectionUrl('/review/modes');
+      setNextSelectionLabel('Review Modes');
+      return;
+    }
+
     let isActive = true;
 
     loadTopic(topicId)
@@ -69,7 +82,7 @@ export const ResultsView = () => {
     return () => {
       isActive = false;
     };
-  }, [topicId]);
+  }, [state.review, topicId]);
 
   return (
     <AppShell title="Results" subtitle="Session summary and quick actions for what to practice next.">

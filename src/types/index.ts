@@ -45,6 +45,10 @@ export type TaskStat = {
   task_id: string;
   times_shown: number;
   times_correct: number;
+  last_seen_at: string | null;
+  next_review_at: string | null;
+  streak_correct: number;
+  ease_level: number;
 };
 
 export type SessionWrongAnswer = {

@@ -17,7 +17,7 @@ export const HomeView = ({ userId, onSignOut }: HomeViewProps) => {
   const navigate = useNavigate();
   const [sortMode, setSortMode] = useState<SortMode>('sequential');
   const { topics, loading, error } = useTopics();
-  const { topicRates, loading: statsLoading, error: statsError } = useStats(userId, topics);
+  const { topicRates, reviewDueCount, reviewQueueCount, loading: statsLoading, error: statsError } = useStats(userId, topics);
 
   const sortedTopics = useMemo(() => {
     if (sortMode === 'sequential') {
@@ -51,6 +51,23 @@ export const HomeView = ({ userId, onSignOut }: HomeViewProps) => {
       {error ? <p className="mt-8 rounded-2xl bg-terracotta-500/10 px-4 py-3 text-sm text-terracotta-600">{error}</p> : null}
       {statsError ? <p className="mt-4 rounded-2xl bg-terracotta-500/10 px-4 py-3 text-sm text-terracotta-600">{statsError}</p> : null}
       {statsLoading ? <p className="mt-4 text-sm text-ink-800/70">Refreshing tracked performance...</p> : null}
+
+      <section className="mt-8">
+        <h2 className="text-lg font-semibold text-ink-900">Review</h2>
+        <button
+          className="mt-3 w-full rounded-[1.75rem] border border-forest-700/20 bg-forest-700 px-5 py-5 text-left text-white shadow-card transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:bg-ink-800/20 disabled:text-ink-800/50 disabled:hover:translate-y-0"
+          type="button"
+          onClick={() => navigate('/review/modes')}
+          disabled={reviewQueueCount === 0}
+        >
+          <span className="block text-xl font-semibold">Review Today</span>
+          <span className="mt-1 block text-sm text-white/80">
+            {reviewQueueCount > 0
+              ? `${reviewQueueCount}-card review${reviewDueCount > reviewQueueCount ? `, ${reviewDueCount} due total` : ''}`
+              : 'No cards due right now'}
+          </span>
+        </button>
+      </section>
 
       <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {sortedTopics.map((topic) => (
