@@ -1,7 +1,7 @@
 import type { PropsWithChildren, ReactNode } from 'react';
 
 type AppShellProps = PropsWithChildren<{
-  title: string;
+  title?: string;
   subtitle?: string;
   action?: ReactNode;
 }>;
@@ -13,7 +13,7 @@ export const AppShell = ({ title, subtitle, action, children }: AppShellProps) =
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-forest-700">Portuguese Practice</p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-tight text-ink-900">{title}</h1>
+            {title ? <h1 className="mt-2 text-3xl font-semibold tracking-tight text-ink-900">{title}</h1> : null}
             {subtitle ? <p className="mt-2 max-w-2xl text-sm text-ink-800/70">{subtitle}</p> : null}
           </div>
           {action}

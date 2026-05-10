@@ -33,7 +33,6 @@ export const HomeView = ({ userId, onSignOut }: HomeViewProps) => {
 
   return (
     <AppShell
-      title="Choose a topic"
       action={
         <button className="rounded-full border border-ink-800/10 px-4 py-2 text-sm font-semibold text-ink-900" onClick={() => void onSignOut()}>
           Sign out
