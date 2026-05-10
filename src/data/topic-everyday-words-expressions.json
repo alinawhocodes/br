@@ -10,19 +10,40 @@
     { "id": "everyday-words-05", "front": "to fire someone", "back": "demitir" },
     { "id": "everyday-words-06", "front": "employee", "back": "funcionário", "acceptedBacks": ["funcionária"] },
     { "id": "everyday-words-07", "front": "early", "back": "adiantado", "acceptedBacks": ["adiantada"] },
-    { "id": "everyday-words-08", "front": "on time", "back": "pontual" },
-    { "id": "everyday-words-09", "front": "late", "back": "atrasado", "acceptedBacks": ["atrasada"] },
+    {
+      "id": "everyday-words-08",
+      "front": "on time",
+      "back": "pontual",
+      "fillIns": [{ "id": "everyday-words-fill-01", "front": "I am on time.\n\nEu sou ___.", "back": "pontual" }]
+    },
+    {
+      "id": "everyday-words-09",
+      "front": "late",
+      "back": "atrasado",
+      "acceptedBacks": ["atrasada"],
+      "fillIns": [{ "id": "everyday-words-fill-02", "front": "I am late.\n\nEu estou ___.", "back": "atrasado", "acceptedBacks": ["atrasada"] }]
+    },
     { "id": "everyday-words-10", "front": "expensive", "back": "caro", "acceptedBacks": ["cara"] },
     { "id": "everyday-words-11", "front": "cheap", "back": "barato", "acceptedBacks": ["barata"] },
     { "id": "everyday-words-12", "front": "routine", "back": "rotina" },
     { "id": "everyday-words-13", "front": "Go to hell!", "back": "Vai para o inferno!" },
-    { "id": "everyday-words-14", "front": "tomorrow", "back": "amanhã" },
+    {
+      "id": "everyday-words-14",
+      "front": "tomorrow",
+      "back": "amanhã",
+      "fillIns": [{ "id": "everyday-words-fill-03", "front": "I am going to study tomorrow.\n\nEu vou estudar ___.", "back": "amanhã" }]
+    },
     { "id": "everyday-words-15", "front": "surgery", "back": "cirurgia" },
     { "id": "everyday-words-16", "front": "boyfriend", "back": "namorado" },
     { "id": "everyday-words-17", "front": "girlfriend", "back": "namorada" },
     { "id": "everyday-words-18", "front": "turtle", "back": "tartaruga" },
     { "id": "everyday-words-19", "front": "notebook", "back": "caderno" },
     { "id": "everyday-words-20", "front": "sick leave", "back": "licença médica" },
-    { "id": "everyday-words-21", "front": "My boss fires the employees.", "back": "O meu chefe demite os funcionários." }
+    {
+      "id": "everyday-words-21",
+      "front": "My boss fires the employees.",
+      "back": "O meu chefe demite os funcionários.",
+      "fillIns": [{ "id": "everyday-words-fill-04", "front": "My boss fires the employees.\n\nO meu chefe demite os ___.", "back": "funcionários" }]
+    }
   ]
 }

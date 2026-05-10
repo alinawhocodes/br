@@ -4,8 +4,18 @@
   "imageUrl": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80",
   "tasks": [
     { "id": "irregular-verbs-01", "front": "can", "back": "poder" },
-    { "id": "irregular-verbs-02", "front": "I can", "back": "eu posso" },
-    { "id": "irregular-verbs-03", "front": "you can", "back": "você pode" },
+    {
+      "id": "irregular-verbs-02",
+      "front": "I can",
+      "back": "eu posso",
+      "fillIns": [{ "id": "irregular-verbs-fill-01", "front": "I can speak Portuguese.\n\nEu ___ falar português.", "back": "posso" }]
+    },
+    {
+      "id": "irregular-verbs-03",
+      "front": "you can",
+      "back": "você pode",
+      "fillIns": [{ "id": "irregular-verbs-fill-02", "front": "Can you repeat, please?\n\nVocê ___ repetir, por favor?", "back": "pode" }]
+    },
     { "id": "irregular-verbs-04", "front": "he can", "back": "ele pode" },
     { "id": "irregular-verbs-05", "front": "she can", "back": "ela pode" },
     { "id": "irregular-verbs-06", "front": "we can", "back": "nós podemos" },
@@ -15,8 +25,18 @@
     { "id": "irregular-verbs-10", "front": "we (informal) can", "back": "a gente pode" },
 
     { "id": "irregular-verbs-11", "front": "to have", "back": "ter" },
-    { "id": "irregular-verbs-12", "front": "I have", "back": "eu tenho" },
-    { "id": "irregular-verbs-13", "front": "you have", "back": "você tem" },
+    {
+      "id": "irregular-verbs-12",
+      "front": "I have",
+      "back": "eu tenho",
+      "fillIns": [{ "id": "irregular-verbs-fill-03", "front": "I have sick leave.\n\nEu ___ licença médica.", "back": "tenho" }]
+    },
+    {
+      "id": "irregular-verbs-13",
+      "front": "you have",
+      "back": "você tem",
+      "fillIns": [{ "id": "irregular-verbs-fill-04", "front": "Do you have a notebook?\n\nVocê ___ um caderno?", "back": "tem" }]
+    },
     { "id": "irregular-verbs-14", "front": "he has", "back": "ele tem" },
     { "id": "irregular-verbs-15", "front": "she has", "back": "ela tem" },
     { "id": "irregular-verbs-16", "front": "we have", "back": "nós temos" },
@@ -26,8 +46,18 @@
     { "id": "irregular-verbs-20", "front": "we (informal) have", "back": "a gente tem" },
 
     { "id": "irregular-verbs-21", "front": "to go/will", "back": "ir" },
-    { "id": "irregular-verbs-22", "front": "I go", "back": "eu vou" },
-    { "id": "irregular-verbs-23", "front": "you go", "back": "você vai" },
+    {
+      "id": "irregular-verbs-22",
+      "front": "I go",
+      "back": "eu vou",
+      "fillIns": [{ "id": "irregular-verbs-fill-05", "front": "I will open it here.\n\nEu ___ abrir aqui.", "back": "vou" }]
+    },
+    {
+      "id": "irregular-verbs-23",
+      "front": "you go",
+      "back": "você vai",
+      "fillIns": [{ "id": "irregular-verbs-fill-06", "front": "Are you going home?\n\nVocê ___ para casa?", "back": "vai" }]
+    },
     { "id": "irregular-verbs-24", "front": "he goes", "back": "ele vai" },
     { "id": "irregular-verbs-25", "front": "she goes", "back": "ela vai" },
     { "id": "irregular-verbs-26", "front": "we go", "back": "nós vamos" },
@@ -37,8 +67,18 @@
     { "id": "irregular-verbs-30", "front": "we (informal) go", "back": "a gente vai" },
 
     { "id": "irregular-verbs-31", "front": "to be (identity/permanent)", "back": "ser" },
-    { "id": "irregular-verbs-32", "front": "I am", "back": "eu sou" },
-    { "id": "irregular-verbs-33", "front": "you are", "back": "você é" },
+    {
+      "id": "irregular-verbs-32",
+      "front": "I am",
+      "back": "eu sou",
+      "fillIns": [{ "id": "irregular-verbs-fill-07", "front": "I am from Brazil.\n\nEu ___ do Brasil.", "back": "sou" }]
+    },
+    {
+      "id": "irregular-verbs-33",
+      "front": "you are",
+      "back": "você é",
+      "fillIns": [{ "id": "irregular-verbs-fill-08", "front": "Where are you from?\n\nDe onde você ___?", "back": "é" }]
+    },
     { "id": "irregular-verbs-34", "front": "he is", "back": "ele é" },
     { "id": "irregular-verbs-35", "front": "she is", "back": "ela é" },
     { "id": "irregular-verbs-36", "front": "we are", "back": "nós somos" },
@@ -48,8 +88,18 @@
     { "id": "irregular-verbs-40", "front": "we (informal) are", "back": "a gente é" },
 
     { "id": "irregular-verbs-41", "front": "to be (temp/sensation)", "back": "estar" },
-    { "id": "irregular-verbs-42", "front": "I am (temp/sensation)", "back": "eu estou" },
-    { "id": "irregular-verbs-43", "front": "you are (temp/sensation)", "back": "você está" },
+    {
+      "id": "irregular-verbs-42",
+      "front": "I am (temp/sensation)",
+      "back": "eu estou",
+      "fillIns": [{ "id": "irregular-verbs-fill-09", "front": "I am late.\n\nEu ___ atrasado.", "back": "estou" }]
+    },
+    {
+      "id": "irregular-verbs-43",
+      "front": "you are (temp/sensation)",
+      "back": "você está",
+      "fillIns": [{ "id": "irregular-verbs-fill-10", "front": "Are you cold?\n\nVocê ___ com frio?", "back": "está" }]
+    },
     { "id": "irregular-verbs-44", "front": "he is (temp/sensation)", "back": "ele está" },
     { "id": "irregular-verbs-45", "front": "she is (temp/sensation)", "back": "ela está" },
     { "id": "irregular-verbs-46", "front": "we are (temp/sensation)", "back": "nós estamos" },
@@ -58,11 +108,41 @@
     { "id": "irregular-verbs-49", "front": "they (fem.) are (temp/sensation)", "back": "elas estão" },
     { "id": "irregular-verbs-50", "front": "we (informal) are (temp/sensation)", "back": "a gente está" },
 
-    { "id": "irregular-verbs-51", "front": "The boy has a pain in the knee.", "back": "O rapaz está com dor no joelho." },
-    { "id": "irregular-verbs-52", "front": "The man has a headache.", "back": "O homem está com dor de cabeça." },
-    { "id": "irregular-verbs-53", "front": "The boy is thirsty.", "back": "O rapaz está com sede." },
-    { "id": "irregular-verbs-54", "front": "The woman is hungry.", "back": "A mulher está com fome." },
-    { "id": "irregular-verbs-55", "front": "The baby is sleepy.", "back": "O bebê está com sono." },
-    { "id": "irregular-verbs-56", "front": "The boy is cold.", "back": "O menino está com frio." }
+    {
+      "id": "irregular-verbs-51",
+      "front": "The boy has a pain in the knee.",
+      "back": "O rapaz está com dor no joelho.",
+      "fillIns": [{ "id": "irregular-verbs-fill-11", "front": "The boy has pain in the knee.\n\nO rapaz ___ com dor no joelho.", "back": "está" }]
+    },
+    {
+      "id": "irregular-verbs-52",
+      "front": "The man has a headache.",
+      "back": "O homem está com dor de cabeça.",
+      "fillIns": [{ "id": "irregular-verbs-fill-12", "front": "The man has pain in the head.\n\nO homem está com dor ___ cabeça.", "back": "de" }]
+    },
+    {
+      "id": "irregular-verbs-53",
+      "front": "The boy is thirsty.",
+      "back": "O rapaz está com sede.",
+      "fillIns": [{ "id": "irregular-verbs-fill-13", "front": "The boy is thirsty.\n\nO rapaz está com ___.", "back": "sede" }]
+    },
+    {
+      "id": "irregular-verbs-54",
+      "front": "The woman is hungry.",
+      "back": "A mulher está com fome.",
+      "fillIns": [{ "id": "irregular-verbs-fill-14", "front": "The woman is hungry.\n\nA mulher está com ___.", "back": "fome" }]
+    },
+    {
+      "id": "irregular-verbs-55",
+      "front": "The baby is sleepy.",
+      "back": "O bebê está com sono.",
+      "fillIns": [{ "id": "irregular-verbs-fill-15", "front": "The baby is sleepy.\n\nO bebê está com ___.", "back": "sono" }]
+    },
+    {
+      "id": "irregular-verbs-56",
+      "front": "The boy is cold.",
+      "back": "O menino está com frio.",
+      "fillIns": [{ "id": "irregular-verbs-fill-16", "front": "The boy is cold.\n\nO menino está com ___.", "back": "frio" }]
+    }
   ]
 }

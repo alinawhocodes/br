@@ -4,6 +4,7 @@ import { AppShell } from '../components/AppShell';
 import { PlaceholderPanel } from '../components/PlaceholderPanel';
 import { loadTopic } from '../hooks/useTopics';
 import { buildBatchOptions, shouldSkipBatchSelection } from '../lib/batch';
+import { getTaskStatIds } from '../lib/practiceTasks';
 import { fetchTaskStats } from '../lib/stats';
 import type { Topic } from '../types';
 
@@ -49,7 +50,7 @@ export const BatchSelectionView = ({ userId }: BatchSelectionViewProps) => {
         try {
           const stats = await fetchTaskStats(
             userId,
-            loadedTopic.tasks.map((task) => task.id),
+            getTaskStatIds(loadedTopic.tasks),
           );
 
           if (!isActive) {
@@ -58,7 +59,7 @@ export const BatchSelectionView = ({ userId }: BatchSelectionViewProps) => {
 
           const batches = buildBatchOptions(loadedTopic.tasks);
           const rates = batches.reduce<Record<string, number | null>>((accumulator, batch) => {
-            const taskIds = new Set(loadedTopic.tasks.slice(batch.start, batch.end).map((task) => task.id));
+            const taskIds = new Set(getTaskStatIds(loadedTopic.tasks.slice(batch.start, batch.end)));
             const relevantStats = stats.filter((stat) => taskIds.has(stat.task_id) && stat.times_shown > 0);
 
             const totals = relevantStats.reduce(

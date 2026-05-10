@@ -74,9 +74,11 @@ export const ResultsView = () => {
   return (
     <AppShell title="Results" subtitle="Session summary and quick actions for what to practice next.">
       <div className="rounded-[1.75rem] bg-sand-50 p-6">
-        {result.mode === 'write-in' ? (
+        {result.mode === 'write-in' || result.mode === 'fill-in' ? (
           <>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-800/50">Write-in score</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-800/50">
+              {result.mode === 'fill-in' ? 'Fill-in score' : 'Write-in score'}
+            </p>
             <p className="mt-2 text-4xl font-semibold text-ink-900">{score ?? '0/0'}</p>
             <p className="mt-2 text-sm text-ink-800/70">{result.wrongAnswers.length} wrong answers</p>
           </>
@@ -94,7 +96,9 @@ export const ResultsView = () => {
           {result.wrongAnswers.map((wrong) => (
             <article key={`${wrong.taskId}-${wrong.userAnswer}`} className="rounded-[1.25rem] border border-ink-800/10 bg-white p-4">
               <p className="text-sm font-semibold text-ink-900">{wrong.prompt}</p>
-              {result.mode === 'write-in' ? <p className="mt-2 text-sm text-terracotta-600">Your answer: {wrong.userAnswer}</p> : null}
+              {result.mode === 'write-in' || result.mode === 'fill-in' ? (
+                <p className="mt-2 text-sm text-terracotta-600">Your answer: {wrong.userAnswer}</p>
+              ) : null}
               <p className="mt-1 text-sm text-forest-700">Correct: {wrong.correctAnswer}</p>
             </article>
           ))}

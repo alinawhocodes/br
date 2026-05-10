@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { fetchTaskStats } from '../lib/stats';
+import { getTopicSummaryStatIds } from '../lib/practiceTasks';
 import type { TaskStat, TopicSummary } from '../types';
 
 type TopicRate = {
@@ -16,7 +17,8 @@ type StatsState = {
 
 const buildRates = (topics: TopicSummary[], stats: TaskStat[]): Record<string, TopicRate> =>
   topics.reduce<Record<string, TopicRate>>((accumulator, topic) => {
-    const topicStats = stats.filter((stat) => topic.taskIds.includes(stat.task_id) && stat.times_shown > 0);
+    const topicStatIds = getTopicSummaryStatIds(topic);
+    const topicStats = stats.filter((stat) => topicStatIds.includes(stat.task_id) && stat.times_shown > 0);
     const totals = topicStats.reduce(
       (result, stat) => ({
         shown: result.shown + stat.times_shown,
@@ -41,7 +43,7 @@ export const useStats = (userId: string | null, topics: TopicSummary[]) => {
     topicRates: {},
   });
 
-  const taskIds = useMemo(() => topics.flatMap((topic) => topic.taskIds), [topics]);
+  const taskIds = useMemo(() => topics.flatMap((topic) => getTopicSummaryStatIds(topic)), [topics]);
 
   useEffect(() => {
     if (!userId || taskIds.length === 0) {

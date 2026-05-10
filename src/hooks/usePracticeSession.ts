@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react';
 import { loadTopic } from './useTopics';
 import { getBatchOptionById, getTasksForBatch } from '../lib/batch';
-import type { BatchOption, PracticeMode, Task, Topic } from '../types';
+import { getPracticeTasksForMode } from '../lib/practiceTasks';
+import type { BatchOption, PracticeMode, PracticeTask, Topic } from '../types';
 
 type PracticeSessionState = {
   topic: Topic | null;
   batch: BatchOption | null;
-  tasks: Task[];
+  tasks: PracticeTask[];
   currentIndex: number;
   loading: boolean;
   error: string | null;
 };
 
-const shuffleTasks = (tasks: Task[]): Task[] => {
+const shuffleTasks = (tasks: PracticeTask[]): PracticeTask[] => {
   const shuffled = [...tasks];
 
   for (let index = shuffled.length - 1; index > 0; index -= 1) {
@@ -24,7 +25,7 @@ const shuffleTasks = (tasks: Task[]): Task[] => {
 };
 
 export const isPracticeMode = (value: string | null): value is PracticeMode =>
-  value === 'flashcard-en-pt' || value === 'flashcard-pt-en' || value === 'write-in';
+  value === 'flashcard-en-pt' || value === 'flashcard-pt-en' || value === 'write-in' || value === 'fill-in';
 
 export const usePracticeSession = (params: {
   topicId: string | undefined;
@@ -66,6 +67,7 @@ export const usePracticeSession = (params: {
       return;
     }
 
+    const practiceMode = params.mode;
     let isActive = true;
 
     setState((current) => ({
@@ -94,10 +96,11 @@ export const usePracticeSession = (params: {
 
         const batch = getBatchOptionById(topic.tasks, params.batchId) ?? getBatchOptionById(topic.tasks, 'all');
         const batchTasks = getTasksForBatch(topic.tasks, params.batchId);
+        const modeTasks = getPracticeTasksForMode(batchTasks, practiceMode);
         const selectedTasks =
           params.taskIdsOverride && params.taskIdsOverride.length > 0
-            ? batchTasks.filter((task) => params.taskIdsOverride?.includes(task.id))
-            : batchTasks;
+            ? modeTasks.filter((task) => params.taskIdsOverride?.includes(task.id))
+            : modeTasks;
         const shuffledTasks = shuffleTasks(selectedTasks);
 
         setState({

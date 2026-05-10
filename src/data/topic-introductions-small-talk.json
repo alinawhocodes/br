@@ -4,12 +4,18 @@
   "imageUrl": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
   "tasks": [
     { "id": "intro-small-talk-01", "front": "Greet people and introduce yourself", "back": "Cumprimentar pessoas e se apresentar" },
-    { "id": "intro-small-talk-02", "front": "Hello, my name is ...", "back": "Olá, meu nome é ..." },
+    {
+      "id": "intro-small-talk-02",
+      "front": "Hello, my name is ...",
+      "back": "Olá, meu nome é ...",
+      "fillIns": [{ "id": "intro-small-talk-fill-01", "front": "Hello, my name is Alina.\n\nOlá, meu nome ___ Alina.", "back": "é" }]
+    },
     {
       "id": "intro-small-talk-03",
       "front": "What is your name?",
       "back": "Qual é o seu nome?",
-      "acceptedBacks": ["Como você se chama?"]
+      "acceptedBacks": ["Como você se chama?"],
+      "fillIns": [{ "id": "intro-small-talk-fill-02", "front": "What is your name?\n\nQual é ___ seu nome?", "back": "o" }]
     },
     { "id": "intro-small-talk-04", "front": "My name is ...", "back": "Meu nome é ...", "acceptedBacks": ["Eu me chamo..."] },
     { "id": "intro-small-talk-05", "front": "Nice to meet you.", "back": "Muito prazer." },
@@ -20,7 +26,12 @@
       "back": "Como vai?",
       "acceptedBacks": ["Como vai você?", "Tudo bem?"]
     },
-    { "id": "intro-small-talk-08", "front": "I am fine, and you?", "back": "Eu estou bem, e você?" },
+    {
+      "id": "intro-small-talk-08",
+      "front": "I am fine, and you?",
+      "back": "Eu estou bem, e você?",
+      "fillIns": [{ "id": "intro-small-talk-fill-03", "front": "I am fine, and you?\n\nEu estou bem, ___ você?", "back": "e" }]
+    },
     {
       "id": "intro-small-talk-09",
       "front": "All good.",
@@ -34,7 +45,12 @@
     { "id": "intro-small-talk-14", "front": "That's cool!", "back": "Que legal!" },
     { "id": "intro-small-talk-15", "front": "OK? OK!", "back": "Beleza? Beleza!" },
     { "id": "intro-small-talk-16", "front": "wow!", "back": "Nossa!" },
-    { "id": "intro-small-talk-17", "front": "Have a great weekend!", "back": "Bom fim de semana!" },
+    {
+      "id": "intro-small-talk-17",
+      "front": "Have a great weekend!",
+      "back": "Bom fim de semana!",
+      "fillIns": [{ "id": "intro-small-talk-fill-04", "front": "Have a great weekend!\n\nBom fim ___ semana!", "back": "de" }]
+    },
     { "id": "intro-small-talk-18", "front": "for you too", "back": "pra você também" },
     { "id": "intro-small-talk-19", "front": "That's right!", "back": "Isso!" }
   ]

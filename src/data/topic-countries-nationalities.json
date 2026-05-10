@@ -32,14 +32,54 @@
     { "id": "countries-nationalities-27", "front": "Latvia / Latvian", "back": "A Letônia / letão, letã" },
     { "id": "countries-nationalities-28", "front": "Russia / Russian", "back": "A Rússia / russo, russa" },
     { "id": "countries-nationalities-29", "front": "Lithuania / Lithuanian", "back": "A Lituânia / lituano, lituana" },
-    { "id": "countries-nationalities-30", "front": "Where are you from?", "back": "De onde você é?" },
+    {
+      "id": "countries-nationalities-30",
+      "front": "Where are you from?",
+      "back": "De onde você é?",
+      "fillIns": [{ "id": "countries-nationalities-fill-01", "front": "Where are you from?\n\nDe onde você ___?", "back": "é" }]
+    },
     { "id": "countries-nationalities-31", "front": "I am from...", "back": "Eu sou do/da/dos/das/de..." },
-    { "id": "countries-nationalities-32", "front": "I am from Brazil.", "back": "Eu sou do Brasil." },
-    { "id": "countries-nationalities-33", "front": "I am from Spain.", "back": "Eu sou da Espanha." },
-    { "id": "countries-nationalities-34", "front": "I am from Latvia.", "back": "Eu sou da Letônia." },
-    { "id": "countries-nationalities-35", "front": "de + o", "back": "do (Eu sou do Brasil.)" },
-    { "id": "countries-nationalities-36", "front": "de + a", "back": "da (Eu sou da Espanha.)" },
-    { "id": "countries-nationalities-37", "front": "de + os", "back": "dos (Eu sou dos Estados Unidos.)" },
-    { "id": "countries-nationalities-38", "front": "de + as", "back": "das (Eu sou das Filipinas.)" }
+    {
+      "id": "countries-nationalities-32",
+      "front": "I am from Brazil.",
+      "back": "Eu sou do Brasil.",
+      "fillIns": [{ "id": "countries-nationalities-fill-02", "front": "I am from Brazil.\n\nEu sou ___ Brasil.", "back": "do" }]
+    },
+    {
+      "id": "countries-nationalities-33",
+      "front": "I am from Spain.",
+      "back": "Eu sou da Espanha.",
+      "fillIns": [{ "id": "countries-nationalities-fill-03", "front": "I am from Spain.\n\nEu sou ___ Espanha.", "back": "da" }]
+    },
+    {
+      "id": "countries-nationalities-34",
+      "front": "I am from Latvia.",
+      "back": "Eu sou da Letônia.",
+      "fillIns": [{ "id": "countries-nationalities-fill-04", "front": "I am from Latvia.\n\nEu sou ___ Letônia.", "back": "da" }]
+    },
+    {
+      "id": "countries-nationalities-35",
+      "front": "de + o",
+      "back": "do (Eu sou do Brasil.)",
+      "fillIns": [{ "id": "countries-nationalities-fill-05", "front": "from/of + the (masculine singular)\n\nde + o = ___", "back": "do" }]
+    },
+    {
+      "id": "countries-nationalities-36",
+      "front": "de + a",
+      "back": "da (Eu sou da Espanha.)",
+      "fillIns": [{ "id": "countries-nationalities-fill-06", "front": "from/of + the (feminine singular)\n\nde + a = ___", "back": "da" }]
+    },
+    {
+      "id": "countries-nationalities-37",
+      "front": "de + os",
+      "back": "dos (Eu sou dos Estados Unidos.)",
+      "fillIns": [{ "id": "countries-nationalities-fill-07", "front": "I am from the United States.\n\nEu sou ___ Estados Unidos.", "back": "dos" }]
+    },
+    {
+      "id": "countries-nationalities-38",
+      "front": "de + as",
+      "back": "das (Eu sou das Filipinas.)",
+      "fillIns": [{ "id": "countries-nationalities-fill-08", "front": "from/of + the (feminine plural)\n\nde + as = ___", "back": "das" }]
+    }
   ]
 }

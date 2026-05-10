@@ -5,13 +5,42 @@
   "tasks": [
     { "id": "professions-01", "front": "What do you do?", "back": "O que você faz?" },
     { "id": "professions-02", "front": "What is your profession?", "back": "Qual é a sua profissão?" },
-    { "id": "professions-03", "front": "I am...", "back": "Eu sou..." },
+    {
+      "id": "professions-03",
+      "front": "I am...",
+      "back": "Eu sou...",
+      "fillIns": [{ "id": "professions-fill-01", "front": "I am a software engineer.\n\nEu ___ engenheira de software.", "back": "sou" }]
+    },
     { "id": "professions-04", "front": "What does he/she do?", "back": "O que ele/ela faz?" },
-    { "id": "professions-05", "front": "He/She is...", "back": "Ele/ela é..." },
-    { "id": "professions-06", "front": "teacher or professor", "back": "professor", "acceptedBacks": ["professora"], "acceptedFronts": ["teacher", "professor"] },
+    {
+      "id": "professions-05",
+      "front": "He/She is...",
+      "back": "Ele/ela é...",
+      "fillIns": [{ "id": "professions-fill-02", "front": "She is a doctor.\n\nEla ___ médica.", "back": "é" }]
+    },
+    {
+      "id": "professions-06",
+      "front": "teacher or professor",
+      "back": "professor",
+      "acceptedBacks": ["professora"],
+      "acceptedFronts": ["teacher", "professor"],
+      "fillIns": [{ "id": "professions-fill-03", "front": "He is a teacher.\n\nEle é ___.", "back": "professor" }]
+    },
     { "id": "professions-07", "front": "software engineer", "back": "engenheiro de software", "acceptedBacks": ["engenheira de software", "desenvolvedor de software", "desenvolvedora de software"] },
-    { "id": "professions-08", "front": "doctor", "back": "médico", "acceptedBacks": ["médica"] },
-    { "id": "professions-09", "front": "nurse", "back": "enfermeiro", "acceptedBacks": ["enfermeira"] },
+    {
+      "id": "professions-08",
+      "front": "doctor",
+      "back": "médico",
+      "acceptedBacks": ["médica"],
+      "fillIns": [{ "id": "professions-fill-04", "front": "João is a doctor.\n\nJoão é ___.", "back": "médico" }]
+    },
+    {
+      "id": "professions-09",
+      "front": "nurse",
+      "back": "enfermeiro",
+      "acceptedBacks": ["enfermeira"],
+      "fillIns": [{ "id": "professions-fill-05", "front": "Marta is a nurse.\n\nMarta é ___.", "back": "enfermeira" }]
+    },
     { "id": "professions-10", "front": "student", "back": "estudante" },
     { "id": "professions-11", "front": "dentist", "back": "dentista" },
     { "id": "professions-12", "front": "pilot", "back": "piloto" },

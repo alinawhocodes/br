@@ -3,25 +3,85 @@
   "name": "Possessive Pronouns (Nouns)",
   "imageUrl": "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&fit=crop&w=1200&q=80",
   "tasks": [
-    { "id": "possessive-nouns-01", "front": "my notebook", "back": "meu caderno" },
-    { "id": "possessive-nouns-02", "front": "my pen", "back": "minha caneta" },
-    { "id": "possessive-nouns-03", "front": "my glasses", "back": "meus óculos" },
-    { "id": "possessive-nouns-04", "front": "my pens", "back": "minhas canetas" },
+    {
+      "id": "possessive-nouns-01",
+      "front": "my notebook",
+      "back": "meu caderno",
+      "fillIns": [{ "id": "possessive-nouns-fill-01", "front": "This is my notebook.\n\nEste é ___ caderno.", "back": "meu" }]
+    },
+    {
+      "id": "possessive-nouns-02",
+      "front": "my pen",
+      "back": "minha caneta",
+      "fillIns": [{ "id": "possessive-nouns-fill-02", "front": "This is my pen.\n\nEsta é ___ caneta.", "back": "minha" }]
+    },
+    {
+      "id": "possessive-nouns-03",
+      "front": "my glasses",
+      "back": "meus óculos",
+      "fillIns": [{ "id": "possessive-nouns-fill-03", "front": "These are my glasses.\n\nEstes são ___ óculos.", "back": "meus" }]
+    },
+    {
+      "id": "possessive-nouns-04",
+      "front": "my pens",
+      "back": "minhas canetas",
+      "fillIns": [{ "id": "possessive-nouns-fill-04", "front": "These are my pens.\n\nEstas são ___ canetas.", "back": "minhas" }]
+    },
 
-    { "id": "possessive-nouns-05", "front": "your cell phone", "back": "seu celular" },
-    { "id": "possessive-nouns-06", "front": "your calculator", "back": "sua calculadora" },
-    { "id": "possessive-nouns-07", "front": "your notebooks", "back": "seus cadernos" },
-    { "id": "possessive-nouns-08", "front": "your rulers", "back": "suas réguas" },
+    {
+      "id": "possessive-nouns-05",
+      "front": "your cell phone",
+      "back": "seu celular",
+      "fillIns": [{ "id": "possessive-nouns-fill-05", "front": "This is your cell phone.\n\nEste é ___ celular.", "back": "seu" }]
+    },
+    {
+      "id": "possessive-nouns-06",
+      "front": "your calculator",
+      "back": "sua calculadora",
+      "fillIns": [{ "id": "possessive-nouns-fill-06", "front": "This is your calculator.\n\nEsta é ___ calculadora.", "back": "sua" }]
+    },
+    {
+      "id": "possessive-nouns-07",
+      "front": "your notebooks",
+      "back": "seus cadernos",
+      "fillIns": [{ "id": "possessive-nouns-fill-07", "front": "These are your notebooks.\n\nEstes são ___ cadernos.", "back": "seus" }]
+    },
+    {
+      "id": "possessive-nouns-08",
+      "front": "your rulers",
+      "back": "suas réguas",
+      "fillIns": [{ "id": "possessive-nouns-fill-08", "front": "These are your rulers.\n\nEstas são ___ réguas.", "back": "suas" }]
+    },
 
     { "id": "possessive-nouns-09", "front": "his computer", "back": "computador dele" },
     { "id": "possessive-nouns-10", "front": "her bag", "back": "bolsa dela" },
     { "id": "possessive-nouns-11", "front": "their pencils", "back": "lápis deles" },
     { "id": "possessive-nouns-12", "front": "their scissors", "back": "tesouras delas" },
 
-    { "id": "possessive-nouns-13", "front": "our notepad", "back": "nosso bloco de anotações" },
-    { "id": "possessive-nouns-14", "front": "our bag", "back": "nossa bolsa" },
-    { "id": "possessive-nouns-15", "front": "our staplers", "back": "nossos grampeadores" },
-    { "id": "possessive-nouns-16", "front": "our calculators", "back": "nossas calculadoras" },
+    {
+      "id": "possessive-nouns-13",
+      "front": "our notepad",
+      "back": "nosso bloco de anotações",
+      "fillIns": [{ "id": "possessive-nouns-fill-09", "front": "This is our notepad.\n\nEste é ___ bloco de anotações.", "back": "nosso" }]
+    },
+    {
+      "id": "possessive-nouns-14",
+      "front": "our bag",
+      "back": "nossa bolsa",
+      "fillIns": [{ "id": "possessive-nouns-fill-10", "front": "This is our bag.\n\nEsta é ___ bolsa.", "back": "nossa" }]
+    },
+    {
+      "id": "possessive-nouns-15",
+      "front": "our staplers",
+      "back": "nossos grampeadores",
+      "fillIns": [{ "id": "possessive-nouns-fill-11", "front": "These are our staplers.\n\nEstes são ___ grampeadores.", "back": "nossos" }]
+    },
+    {
+      "id": "possessive-nouns-16",
+      "front": "our calculators",
+      "back": "nossas calculadoras",
+      "fillIns": [{ "id": "possessive-nouns-fill-12", "front": "These are our calculators.\n\nEstas são ___ calculadoras.", "back": "nossas" }]
+    },
 
     { "id": "possessive-nouns-17", "front": "my male friend", "back": "meu amigo" },
     { "id": "possessive-nouns-18", "front": "my female friend", "back": "minha amiga" },

@@ -31,20 +31,65 @@
     { "id": "numbers-26", "front": "30", "back": "trinta" },
     { "id": "numbers-27", "front": "31", "back": "trinta e um" },
     { "id": "numbers-28", "front": "40", "back": "quarenta" },
-    { "id": "numbers-29", "front": "47", "back": "quarenta e sete" },
+    {
+      "id": "numbers-29",
+      "front": "47",
+      "back": "quarenta e sete",
+      "fillIns": [{ "id": "numbers-fill-01", "front": "forty-seven\n\n47 = quarenta e ___", "back": "sete" }]
+    },
     { "id": "numbers-30", "front": "50", "back": "cinquenta" },
-    { "id": "numbers-31", "front": "51", "back": "cinquenta e um" },
+    {
+      "id": "numbers-31",
+      "front": "51",
+      "back": "cinquenta e um",
+      "fillIns": [{ "id": "numbers-fill-02", "front": "fifty-one\n\n51 = cinquenta e ___", "back": "um" }]
+    },
     { "id": "numbers-32", "front": "60", "back": "sessenta" },
-    { "id": "numbers-33", "front": "66", "back": "sessenta e seis" },
+    {
+      "id": "numbers-33",
+      "front": "66",
+      "back": "sessenta e seis",
+      "fillIns": [{ "id": "numbers-fill-03", "front": "sixty-six\n\n66 = sessenta e ___", "back": "seis" }]
+    },
     { "id": "numbers-34", "front": "70", "back": "setenta" },
-    { "id": "numbers-35", "front": "73", "back": "setenta e três" },
+    {
+      "id": "numbers-35",
+      "front": "73",
+      "back": "setenta e três",
+      "fillIns": [{ "id": "numbers-fill-04", "front": "seventy-three\n\n73 = setenta e ___", "back": "três" }]
+    },
     { "id": "numbers-36", "front": "80", "back": "oitenta" },
-    { "id": "numbers-37", "front": "84", "back": "oitenta e quatro" },
+    {
+      "id": "numbers-37",
+      "front": "84",
+      "back": "oitenta e quatro",
+      "fillIns": [{ "id": "numbers-fill-05", "front": "eighty-four\n\n84 = oitenta e ___", "back": "quatro" }]
+    },
     { "id": "numbers-38", "front": "90", "back": "noventa" },
-    { "id": "numbers-39", "front": "99", "back": "noventa e nove" },
+    {
+      "id": "numbers-39",
+      "front": "99",
+      "back": "noventa e nove",
+      "fillIns": [{ "id": "numbers-fill-06", "front": "ninety-nine\n\n99 = noventa e ___", "back": "nove" }]
+    },
     { "id": "numbers-40", "front": "100", "back": "cem" },
-    { "id": "numbers-41", "front": "101", "back": "cento e um" },
-    { "id": "numbers-42", "front": "124", "back": "cento e vinte e quatro" },
-    { "id": "numbers-43", "front": "148", "back": "cento e quarenta e oito" }
+    {
+      "id": "numbers-41",
+      "front": "101",
+      "back": "cento e um",
+      "fillIns": [{ "id": "numbers-fill-07", "front": "one hundred and one\n\n101 = cento e ___", "back": "um" }]
+    },
+    {
+      "id": "numbers-42",
+      "front": "124",
+      "back": "cento e vinte e quatro",
+      "fillIns": [{ "id": "numbers-fill-08", "front": "one hundred and twenty-four\n\n124 = cento e vinte e ___", "back": "quatro" }]
+    },
+    {
+      "id": "numbers-43",
+      "front": "148",
+      "back": "cento e quarenta e oito",
+      "fillIns": [{ "id": "numbers-fill-09", "front": "one hundred and forty-eight\n\n148 = cento e quarenta e ___", "back": "oito" }]
+    }
   ]
 }

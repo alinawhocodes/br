@@ -1,9 +1,15 @@
-export type Task = {
+export type PracticeTask = {
   id: string;
   front: string;
   back: string;
   acceptedFronts?: string[];
   acceptedBacks?: string[];
+};
+
+export type FillInTask = PracticeTask;
+
+export type Task = PracticeTask & {
+  fillIns?: FillInTask[];
 };
 
 export type Topic = {
@@ -19,9 +25,10 @@ export type TopicSummary = {
   imageUrl: string;
   taskCount: number;
   taskIds: string[];
+  fillInTaskIds?: string[];
 };
 
-export type PracticeMode = 'flashcard-en-pt' | 'flashcard-pt-en' | 'write-in';
+export type PracticeMode = 'flashcard-en-pt' | 'flashcard-pt-en' | 'write-in' | 'fill-in';
 
 export type BatchOption = {
   id: string;

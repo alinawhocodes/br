@@ -27,14 +27,34 @@
     { "id": "seasons-months-22", "front": "Saturday", "back": "sábado" },
     { "id": "seasons-months-23", "front": "Sunday", "back": "domingo" },
     { "id": "seasons-months-24", "front": "weekend", "back": "fim de semana", "acceptedBacks": ["final de semana"] },
-    { "id": "seasons-months-25", "front": "it's cold", "back": "está frio" },
-    { "id": "seasons-months-26", "front": "rain", "back": "chuva" },
+    {
+      "id": "seasons-months-25",
+      "front": "it's cold",
+      "back": "está frio",
+      "fillIns": [{ "id": "seasons-months-fill-01", "front": "Today it is cold.\n\nHoje ___ frio.", "back": "está" }]
+    },
+    {
+      "id": "seasons-months-26",
+      "front": "rain",
+      "back": "chuva",
+      "fillIns": [{ "id": "seasons-months-fill-02", "front": "Today there is rain.\n\nHoje tem ___.", "back": "chuva" }]
+    },
     { "id": "seasons-months-27", "front": "snow", "back": "neve" },
     { "id": "seasons-months-28", "front": "hot", "back": "quente" },
     { "id": "seasons-months-29", "front": "sunny", "back": "ensolarado" },
-    { "id": "seasons-months-30", "front": "cloudy", "back": "nublado" },
+    {
+      "id": "seasons-months-30",
+      "front": "cloudy",
+      "back": "nublado",
+      "fillIns": [{ "id": "seasons-months-fill-03", "front": "Today it is cloudy.\n\nHoje está ___.", "back": "nublado" }]
+    },
     { "id": "seasons-months-31", "front": "weather", "back": "clima" },
-    { "id": "seasons-months-32", "front": "The weather is pleasant today.", "back": "O clima está agradável hoje." },
+    {
+      "id": "seasons-months-32",
+      "front": "The weather is pleasant today.",
+      "back": "O clima está agradável hoje.",
+      "fillIns": [{ "id": "seasons-months-fill-04", "front": "The weather is pleasant today.\n\nO clima está ___ hoje.", "back": "agradável" }]
+    },
     { "id": "seasons-months-33", "front": "nice and warm", "back": "quentinho" }
   ]
 }

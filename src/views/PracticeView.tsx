@@ -73,6 +73,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
       : [session.currentTask?.back ?? '', ...(session.currentTask?.acceptedBacks ?? [])];
   const answerText = answerOptions.join(' / ');
   const writeInExpectedOptions = [session.currentTask?.back ?? '', ...(session.currentTask?.acceptedBacks ?? [])];
+  const isTypedMode = mode === 'write-in' || mode === 'fill-in';
 
   if (session.loading) {
     return <div className="flex min-h-screen items-center justify-center bg-sand-50 px-6 text-center text-lg text-ink-900">Loading...</div>;
@@ -235,10 +236,12 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
       </div>
 
       <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6 pb-6">
-        {mode === 'write-in' ? (
+        {isTypedMode ? (
           <div className="flex flex-1 flex-col">
             <div className="flex flex-1 flex-col justify-center">
-              <p className="w-full text-center text-4xl font-semibold leading-tight text-ink-900 sm:text-5xl">{session.currentTask.front}</p>
+              <p className="w-full whitespace-pre-line text-center text-4xl font-semibold leading-tight text-ink-900 sm:text-5xl">
+                {session.currentTask.front}
+              </p>
 
               <div className="mt-10">
                 <label className="sr-only" htmlFor="write-in-answer">
@@ -248,7 +251,7 @@ export const PracticeView = ({ userId }: PracticeViewProps) => {
                   id="write-in-answer"
                   className="w-full rounded-[1.75rem] border border-ink-800/10 bg-white px-5 py-4 text-center text-2xl text-ink-900 outline-none transition focus:border-forest-700 focus:ring-2 focus:ring-forest-700/15"
                   onChange={(event) => setAnswer(event.target.value)}
-                  placeholder="Type your answer"
+                  placeholder={mode === 'fill-in' ? 'Type the missing word' : 'Type your answer'}
                   value={answer}
                   disabled={feedbackState !== 'idle' || submitting}
                 />

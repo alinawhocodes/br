@@ -10,17 +10,46 @@
     { "id": "ser-identity-05", "front": "we are (a gente)", "back": "a gente é" },
     { "id": "ser-identity-06", "front": "we are (nós)", "back": "nós somos" },
     { "id": "ser-identity-07", "front": "they/you all are", "back": "eles/elas/vocês são" },
-    { "id": "ser-identity-08", "front": "My friend is tall.", "back": "Meu amigo é alto.", "acceptedBacks": ["Minha amiga é alta."] },
-    { "id": "ser-identity-09", "front": "I am Brazilian.", "back": "Eu sou brasileiro.", "acceptedBacks": ["Eu sou brasileira."] },
+    {
+      "id": "ser-identity-08",
+      "front": "My friend is tall.",
+      "back": "Meu amigo é alto.",
+      "acceptedBacks": ["Minha amiga é alta."],
+      "fillIns": [{ "id": "ser-identity-fill-01", "front": "My friend is tall.\n\nMeu amigo ___ alto.", "back": "é" }]
+    },
+    {
+      "id": "ser-identity-09",
+      "front": "I am Brazilian.",
+      "back": "Eu sou brasileiro.",
+      "acceptedBacks": ["Eu sou brasileira."],
+      "fillIns": [{ "id": "ser-identity-fill-02", "front": "I am Brazilian.\n\nEu ___ brasileiro.", "back": "sou" }]
+    },
     {
       "id": "ser-identity-10",
       "front": "Many Brazilians are Catholic.",
       "back": "Muitos brasileiros são católicos.",
-      "acceptedBacks": ["Muitas brasileiras são católicas."]
+      "acceptedBacks": ["Muitas brasileiras são católicas."],
+      "fillIns": [{ "id": "ser-identity-fill-03", "front": "Many Brazilians are Catholic.\n\nMuitos brasileiros ___ católicos.", "back": "são" }]
     },
-    { "id": "ser-identity-11", "front": "Alina is a woman.", "back": "A Alina é uma mulher." },
+    {
+      "id": "ser-identity-11",
+      "front": "Alina is a woman.",
+      "back": "A Alina é uma mulher.",
+      "fillIns": [{ "id": "ser-identity-fill-04", "front": "Alina is a woman.\n\nA Alina é ___ mulher.", "back": "uma" }]
+    },
     { "id": "ser-identity-12", "front": "They are heterosexual.", "back": "Eles são heterossexuais.", "acceptedBacks": ["Elas são heterossexuais."] },
-    { "id": "ser-identity-13", "front": "My friend is funny.", "back": "Meu amigo é engraçado.", "acceptedBacks": ["Minha amiga é engraçada."] },
-    { "id": "ser-identity-14", "front": "Alina is an engineer, she is not a Portuguese teacher.", "back": "A Alina é engenheira, ela não é professora de português." }
+    {
+      "id": "ser-identity-13",
+      "front": "My friend is funny.",
+      "back": "Meu amigo é engraçado.",
+      "acceptedBacks": ["Minha amiga é engraçada."],
+      "fillIns": [{ "id": "ser-identity-fill-05", "front": "My friend is funny.\n\nMeu amigo é ___.", "back": "engraçado" }]
+    },
+    {
+      "id": "ser-identity-14",
+      "front": "Alina is an engineer, she is not a Portuguese teacher.",
+      "back": "A Alina é engenheira, ela não é professora de português.",
+      "fillIns": [{ "id": "ser-identity-fill-06", "front": "Alina is an engineer; she is not a Portuguese teacher.\n\nA Alina é engenheira, ela não ___ professora de português.", "back": "é" }]
+    }
   ]
 }

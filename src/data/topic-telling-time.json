@@ -4,16 +4,41 @@
   "imageUrl": "https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=1200&q=80",
   "tasks": [
     { "id": "telling-time-01", "front": "What time is it?", "back": "Que horas são?" },
-    { "id": "telling-time-02", "front": "00:00", "back": "é meia-noite", "acceptedBacks": ["meia-noite"] },
-    { "id": "telling-time-03", "front": "12:00", "back": "é meio-dia", "acceptedBacks": ["meio-dia"] },
-    { "id": "telling-time-04", "front": "03:15", "back": "são três e quinze", "acceptedBacks": ["três e quinze"] },
-    { "id": "telling-time-05", "front": "09:05", "back": "são nove e cinco", "acceptedBacks": ["nove e cinco"] },
+    {
+      "id": "telling-time-02",
+      "front": "00:00",
+      "back": "é meia-noite",
+      "acceptedBacks": ["meia-noite"],
+      "fillIns": [{ "id": "telling-time-fill-01", "front": "It is midnight.\n\n00:00: É ___.", "back": "meia-noite" }]
+    },
+    {
+      "id": "telling-time-03",
+      "front": "12:00",
+      "back": "é meio-dia",
+      "acceptedBacks": ["meio-dia"],
+      "fillIns": [{ "id": "telling-time-fill-02", "front": "It is noon.\n\n12:00: É ___.", "back": "meio-dia" }]
+    },
+    {
+      "id": "telling-time-04",
+      "front": "03:15",
+      "back": "são três e quinze",
+      "acceptedBacks": ["três e quinze"],
+      "fillIns": [{ "id": "telling-time-fill-03", "front": "It is three fifteen.\n\n03:15: São três ___ quinze.", "back": "e" }]
+    },
+    {
+      "id": "telling-time-05",
+      "front": "09:05",
+      "back": "são nove e cinco",
+      "acceptedBacks": ["nove e cinco"],
+      "fillIns": [{ "id": "telling-time-fill-04", "front": "It is nine oh five.\n\n09:05: São nove ___ cinco.", "back": "e" }]
+    },
     { "id": "telling-time-06", "front": "10:23", "back": "são dez e vinte e três", "acceptedBacks": ["dez e vinte e três"] },
     {
       "id": "telling-time-07",
       "front": "14:40",
       "back": "são quatorze e quarenta",
-      "acceptedBacks": ["quatorze e quarenta", "duas e quarenta da tarde", "são duas e quarenta da tarde"]
+      "acceptedBacks": ["quatorze e quarenta", "duas e quarenta da tarde", "são duas e quarenta da tarde"],
+      "fillIns": [{ "id": "telling-time-fill-05", "front": "It is two forty in the afternoon.\n\n14:40: São duas e quarenta ___ tarde.", "back": "da" }]
     },
     { "id": "telling-time-08", "front": "10:50", "back": "são dez e cinquenta", "acceptedBacks": ["dez e cinquenta"] },
     {
@@ -32,16 +57,30 @@
       "id": "telling-time-11",
       "front": "05:30",
       "back": "são cinco e meia",
-      "acceptedBacks": ["cinco e meia", "cinco e trinta", "cinco e meia da manhã", "são cinco e trinta", "são cinco e meia da manhã"]
+      "acceptedBacks": ["cinco e meia", "cinco e trinta", "cinco e meia da manhã", "são cinco e trinta", "são cinco e meia da manhã"],
+      "fillIns": [{ "id": "telling-time-fill-06", "front": "It is five thirty.\n\n05:30: São cinco e ___.", "back": "meia", "acceptedBacks": ["trinta"] }]
     },
-    { "id": "telling-time-12", "front": "06:50", "back": "são dez para as sete", "acceptedBacks": ["dez para as sete", "seis e cinquenta", "são seis e cinquenta"] },
+    {
+      "id": "telling-time-12",
+      "front": "06:50",
+      "back": "são dez para as sete",
+      "acceptedBacks": ["dez para as sete", "seis e cinquenta", "são seis e cinquenta"],
+      "fillIns": [{ "id": "telling-time-fill-07", "front": "It is ten to seven.\n\n06:50: São dez ___ as sete.", "back": "para" }]
+    },
     {
       "id": "telling-time-13",
       "front": "20:00",
       "back": "são oito em ponto da noite",
-      "acceptedBacks": ["oito em ponto da noite", "vinte horas", "oito da noite", "são vinte horas", "são oito da noite"]
+      "acceptedBacks": ["oito em ponto da noite", "vinte horas", "oito da noite", "são vinte horas", "são oito da noite"],
+      "fillIns": [{ "id": "telling-time-fill-08", "front": "It is eight o'clock sharp at night.\n\n20:00: São oito em ___ da noite.", "back": "ponto" }]
     },
-    { "id": "telling-time-14", "front": "01:00", "back": "é uma da manhã", "acceptedBacks": ["uma da manhã", "uma hora da manhã", "é uma hora da manhã"] },
+    {
+      "id": "telling-time-14",
+      "front": "01:00",
+      "back": "é uma da manhã",
+      "acceptedBacks": ["uma da manhã", "uma hora da manhã", "é uma hora da manhã"],
+      "fillIns": [{ "id": "telling-time-fill-09", "front": "It is one in the morning.\n\n01:00: ___ uma da manhã.", "back": "é" }]
+    },
     { "id": "telling-time-15", "front": "11:59", "back": "são onze e cinquenta e nove da manhã", "acceptedBacks": ["onze e cinquenta e nove da manhã"] },
     { "id": "telling-time-16", "front": "13:00", "back": "é uma da tarde", "acceptedBacks": ["uma da tarde", "treze horas", "são treze horas"] },
     {
@@ -84,7 +123,8 @@
       "id": "telling-time-28",
       "front": "9:45",
       "back": "são quinze para as dez",
-      "acceptedBacks": ["nove e quarenta e cinco", "são nove e quarenta e cinco"]
+      "acceptedBacks": ["nove e quarenta e cinco", "são nove e quarenta e cinco"],
+      "fillIns": [{ "id": "telling-time-fill-10", "front": "It is fifteen to ten.\n\n9:45: São quinze para ___ dez.", "back": "as" }]
     },
     {
       "id": "telling-time-29",
@@ -103,7 +143,8 @@
       "id": "telling-time-32",
       "front": "11:50",
       "back": "são dez para o meio-dia",
-      "acceptedBacks": ["dez para o meio-dia", "onze e cinquenta", "são onze e cinquenta"]
+      "acceptedBacks": ["dez para o meio-dia", "onze e cinquenta", "são onze e cinquenta"],
+      "fillIns": [{ "id": "telling-time-fill-11", "front": "It is ten to noon.\n\n11:50: São dez para ___ meio-dia.", "back": "o" }]
     },
     { "id": "telling-time-33", "front": "24:00", "back": "é meia-noite", "acceptedBacks": ["meia-noite"] }
   ]
