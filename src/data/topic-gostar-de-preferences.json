@@ -1,0 +1,103 @@
+{
+  "id": "topic-gostar-de-preferences",
+  "name": "Gostar de: Likes and Preferences",
+  "imageUrl": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
+  "tasks": [
+    {
+      "id": "gostar-de-01",
+      "front": "to like",
+      "back": "gostar de",
+      "fillIns": [{ "id": "gostar-de-fill-01", "front": "to like\n\ngostar ___", "back": "de" }]
+    },
+    {
+      "id": "gostar-de-02",
+      "front": "I like to drink coffee.",
+      "back": "Eu gosto de beber café.",
+      "fillIns": [{ "id": "gostar-de-fill-02", "front": "I like to drink coffee.\n\nEu gosto ___ beber café.", "back": "de" }]
+    },
+    {
+      "id": "gostar-de-03",
+      "front": "Alina likes tea.",
+      "back": "A Alina gosta de chá.",
+      "fillIns": [{ "id": "gostar-de-fill-03", "front": "Alina likes tea.\n\nA Alina gosta ___ chá.", "back": "de" }]
+    },
+    {
+      "id": "gostar-de-04",
+      "front": "I like coffee.",
+      "back": "Eu gosto de café.",
+      "fillIns": [{ "id": "gostar-de-fill-04", "front": "I like coffee.\n\nEu gosto ___ café.", "back": "de" }]
+    },
+    {
+      "id": "gostar-de-05",
+      "front": "I like the coffee from Brazil.",
+      "back": "Eu gosto do café do Brasil.",
+      "fillIns": [{ "id": "gostar-de-fill-05", "front": "I like the coffee from Brazil.\n\nEu gosto ___ café do Brasil.", "back": "do" }]
+    },
+    {
+      "id": "gostar-de-06",
+      "front": "Alina likes tea, but she does not like coffee.",
+      "back": "A Alina gosta de chá, mas ela não gosta de café.",
+      "fillIns": [{ "id": "gostar-de-fill-06", "front": "Alina likes tea, but she does not like coffee.\n\nA Alina gosta de chá, mas ela não gosta ___ café.", "back": "de" }]
+    },
+    {
+      "id": "gostar-de-07",
+      "front": "She likes the tea from England.",
+      "back": "Ela gosta do chá da Inglaterra.",
+      "fillIns": [{ "id": "gostar-de-fill-07", "front": "She likes the tea from England.\n\nEla gosta ___ chá da Inglaterra.", "back": "do" }]
+    },
+    {
+      "id": "gostar-de-08",
+      "front": "What do you like to do on weekends?",
+      "back": "O que você gosta de fazer nos finais de semana?",
+      "acceptedBacks": ["O que você gosta de fazer nos fins de semana?"],
+      "fillIns": [{ "id": "gostar-de-fill-08", "front": "What do you like to do on weekends?\n\nO que você gosta ___ fazer nos finais de semana?", "back": "de" }]
+    },
+    {
+      "id": "gostar-de-09",
+      "front": "I like to study on weekends.",
+      "back": "Eu gosto de estudar nos finais de semana.",
+      "acceptedBacks": ["Eu gosto de estudar nos fins de semana."],
+      "fillIns": [{ "id": "gostar-de-fill-09", "front": "I like to study on weekends.\n\nEu gosto de estudar ___ finais de semana.", "back": "nos" }]
+    },
+    {
+      "id": "gostar-de-10",
+      "front": "I like to work at home.",
+      "back": "Eu gosto de trabalhar em casa.",
+      "fillIns": [{ "id": "gostar-de-fill-10", "front": "I like to work at home.\n\nEu gosto de trabalhar ___ casa.", "back": "em" }]
+    },
+    {
+      "id": "gostar-de-11",
+      "front": "I like to cook.",
+      "back": "Eu gosto de cozinhar."
+    },
+    {
+      "id": "gostar-de-12",
+      "front": "I like to rest.",
+      "back": "Eu gosto de descansar."
+    },
+    {
+      "id": "gostar-de-13",
+      "front": "I like Brazil.",
+      "back": "Eu gosto do Brasil.",
+      "fillIns": [{ "id": "gostar-de-fill-11", "front": "I like Brazil.\n\nEu gosto ___ Brasil.", "back": "do" }]
+    },
+    {
+      "id": "gostar-de-14",
+      "front": "I like Germany.",
+      "back": "Eu gosto da Alemanha.",
+      "fillIns": [{ "id": "gostar-de-fill-12", "front": "I like Germany.\n\nEu gosto ___ Alemanha.", "back": "da" }]
+    },
+    {
+      "id": "gostar-de-15",
+      "front": "I like the United States.",
+      "back": "Eu gosto dos Estados Unidos.",
+      "fillIns": [{ "id": "gostar-de-fill-13", "front": "I like the United States.\n\nEu gosto ___ Estados Unidos.", "back": "dos" }]
+    },
+    {
+      "id": "gostar-de-16",
+      "front": "I like the beaches.",
+      "back": "Eu gosto das praias.",
+      "fillIns": [{ "id": "gostar-de-fill-14", "front": "I like the beaches.\n\nEu gosto ___ praias.", "back": "das" }]
+    }
+  ]
+}
