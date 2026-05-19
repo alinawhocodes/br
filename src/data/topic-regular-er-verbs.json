@@ -1,0 +1,109 @@
+{
+  "id": "topic-regular-er-verbs",
+  "name": "Regular -er Verbs",
+  "imageUrl": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80",
+  "tasks": [
+    { "id": "regular-er-verbs-01", "front": "to drink", "back": "beber" },
+    {
+      "id": "regular-er-verbs-02",
+      "front": "I drink",
+      "back": "eu bebo",
+      "fillIns": [{ "id": "regular-er-fill-01", "front": "I drink coffee.\n\nEu ___ café.", "back": "bebo" }]
+    },
+    {
+      "id": "regular-er-verbs-03",
+      "front": "you drink",
+      "back": "você bebe",
+      "fillIns": [{ "id": "regular-er-fill-02", "front": "Do you drink coffee?\n\nVocê ___ café?", "back": "bebe" }]
+    },
+    { "id": "regular-er-verbs-04", "front": "he drinks", "back": "ele bebe" },
+    { "id": "regular-er-verbs-05", "front": "she drinks", "back": "ela bebe" },
+    {
+      "id": "regular-er-verbs-06",
+      "front": "we drink",
+      "back": "nós bebemos",
+      "fillIns": [{ "id": "regular-er-fill-03", "front": "We drink milk.\n\nNós ___ leite.", "back": "bebemos" }]
+    },
+    { "id": "regular-er-verbs-07", "front": "you all drink", "back": "vocês bebem" },
+    { "id": "regular-er-verbs-08", "front": "they drink (masc./mixed)", "back": "eles bebem" },
+    { "id": "regular-er-verbs-09", "front": "they drink (fem.)", "back": "elas bebem" },
+    {
+      "id": "regular-er-verbs-10",
+      "front": "we drink (informal)",
+      "back": "a gente bebe",
+      "fillIns": [{ "id": "regular-er-fill-04", "front": "We drink chocolate milk. (informal)\n\nA gente ___ leite com chocolate.", "back": "bebe" }]
+    },
+    { "id": "regular-er-verbs-11", "front": "to eat", "back": "comer" },
+    {
+      "id": "regular-er-verbs-12",
+      "front": "I eat",
+      "back": "eu como",
+      "fillIns": [{ "id": "regular-er-fill-05", "front": "I eat early every day.\n\nEu ___ cedo todo dia.", "back": "como" }]
+    },
+    { "id": "regular-er-verbs-13", "front": "you eat", "back": "você come" },
+    { "id": "regular-er-verbs-14", "front": "we eat", "back": "nós comemos" },
+    { "id": "regular-er-verbs-15", "front": "they eat", "back": "eles comem", "acceptedBacks": ["elas comem"] },
+    { "id": "regular-er-verbs-16", "front": "to sell", "back": "vender" },
+    { "id": "regular-er-verbs-17", "front": "to learn", "back": "aprender" },
+    {
+      "id": "regular-er-verbs-18",
+      "front": "I learn",
+      "back": "eu aprendo",
+      "fillIns": [{ "id": "regular-er-fill-06", "front": "At work, I learn a lot.\n\nNo trabalho, eu ___ muito.", "back": "aprendo" }]
+    },
+    { "id": "regular-er-verbs-19", "front": "to receive", "back": "receber" },
+    {
+      "id": "regular-er-verbs-20",
+      "front": "we receive",
+      "back": "nós recebemos",
+      "fillIns": [{ "id": "regular-er-fill-07", "front": "We receive new clients.\n\nNós ___ novos clientes.", "back": "recebemos" }]
+    },
+    { "id": "regular-er-verbs-21", "front": "to run", "back": "correr" },
+    {
+      "id": "regular-er-verbs-22",
+      "front": "they run",
+      "back": "eles correm",
+      "fillIns": [{ "id": "regular-er-fill-08", "front": "In the afternoon, they run fast.\n\nÀ tarde, eles ___ rápido.", "back": "correm" }]
+    },
+    { "id": "regular-er-verbs-23", "front": "to answer", "back": "responder" },
+    {
+      "id": "regular-er-verbs-24",
+      "front": "I answer",
+      "back": "eu respondo",
+      "fillIns": [{ "id": "regular-er-fill-09", "front": "At work, I answer my colleagues.\n\nNo trabalho, eu ___ aos meus colegas.", "back": "respondo" }]
+    },
+    { "id": "regular-er-verbs-25", "front": "to fear", "back": "temer" },
+    { "id": "regular-er-verbs-26", "front": "to owe / must", "back": "dever" },
+    { "id": "regular-er-verbs-27", "front": "to move", "back": "mover" },
+    { "id": "regular-er-verbs-28", "front": "to live", "back": "viver" },
+    {
+      "id": "regular-er-verbs-29",
+      "front": "you all live at home",
+      "back": "vocês vivem",
+      "fillIns": [{ "id": "regular-er-fill-10", "front": "You all live at home.\n\nVocês ___ em casa.", "back": "vivem" }]
+    },
+    { "id": "regular-er-verbs-30", "front": "to fill", "back": "preencher" },
+    { "id": "regular-er-verbs-31", "front": "to depend", "back": "depender" },
+    {
+      "id": "regular-er-verbs-32",
+      "front": "the work depends",
+      "back": "o trabalho depende",
+      "fillIns": [{ "id": "regular-er-fill-11", "front": "The work depends on important tasks.\n\nO trabalho ___ das tarefas importantes.", "back": "depende" }]
+    },
+    { "id": "regular-er-verbs-33", "front": "to promise", "back": "prometer" },
+    {
+      "id": "regular-er-verbs-34",
+      "front": "we promise",
+      "back": "nós prometemos",
+      "fillIns": [{ "id": "regular-er-fill-12", "front": "We promise good ideas.\n\nNós ___ boas ideias.", "back": "prometemos" }]
+    },
+    { "id": "regular-er-verbs-35", "front": "to forget", "back": "esquecer" },
+    {
+      "id": "regular-er-verbs-36",
+      "front": "you forget",
+      "back": "você esquece",
+      "fillIns": [{ "id": "regular-er-fill-13", "front": "During the day, you forget important tasks.\n\nDurante o dia, você ___ as tarefas importantes.", "back": "esquece" }]
+    },
+    { "id": "regular-er-verbs-37", "front": "to defend", "back": "defender" }
+  ]
+}

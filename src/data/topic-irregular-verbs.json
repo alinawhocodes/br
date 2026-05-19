@@ -143,6 +143,32 @@
       "front": "The boy is cold.",
       "back": "O menino está com frio.",
       "fillIns": [{ "id": "irregular-verbs-fill-16", "front": "The boy is cold.\n\nO menino está com ___.", "back": "frio" }]
+    },
+
+    { "id": "irregular-verbs-57", "front": "to want", "back": "querer" },
+    {
+      "id": "irregular-verbs-58",
+      "front": "I want",
+      "back": "eu quero",
+      "fillIns": [{ "id": "irregular-verbs-fill-17", "front": "I want a healthy diet.\n\nEu ___ uma alimentação saudável.", "back": "quero" }]
+    },
+    {
+      "id": "irregular-verbs-59",
+      "front": "you want",
+      "back": "você quer",
+      "fillIns": [{ "id": "irregular-verbs-fill-18", "front": "Do you want to lose weight?\n\nVocê ___ emagrecer?", "back": "quer" }]
+    },
+    { "id": "irregular-verbs-60", "front": "he wants", "back": "ele quer" },
+    { "id": "irregular-verbs-61", "front": "she wants", "back": "ela quer" },
+    { "id": "irregular-verbs-62", "front": "we want", "back": "nós queremos" },
+    { "id": "irregular-verbs-63", "front": "you all want", "back": "vocês querem" },
+    { "id": "irregular-verbs-64", "front": "they want (masc./mixed)", "back": "eles querem" },
+    { "id": "irregular-verbs-65", "front": "they want (fem.)", "back": "elas querem" },
+    {
+      "id": "irregular-verbs-66",
+      "front": "we want (informal)",
+      "back": "a gente quer",
+      "fillIns": [{ "id": "irregular-verbs-fill-19", "front": "We want breakfast. (informal)\n\nA gente ___ café da manhã.", "back": "quer" }]
     }
   ]
 }

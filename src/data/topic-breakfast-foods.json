@@ -1,0 +1,48 @@
+{
+  "id": "topic-breakfast-foods",
+  "name": "Breakfast Foods",
+  "imageUrl": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1200&q=80",
+  "tasks": [
+    {
+      "id": "breakfast-foods-01",
+      "front": "breakfast",
+      "back": "café da manhã",
+      "fillIns": [{ "id": "breakfast-foods-fill-01", "front": "I drink coffee at breakfast.\n\nEu bebo café no ___.", "back": "café da manhã" }]
+    },
+    { "id": "breakfast-foods-02", "front": "sliced sandwich bread", "back": "pão de forma" },
+    { "id": "breakfast-foods-03", "front": "French roll / French bread", "back": "pão francês" },
+    { "id": "breakfast-foods-04", "front": "fruit", "back": "frutas" },
+    { "id": "breakfast-foods-05", "front": "Brazilian cream cheese", "back": "requeijão" },
+    { "id": "breakfast-foods-06", "front": "butter", "back": "manteiga" },
+    { "id": "breakfast-foods-07", "front": "Minas cheese", "back": "queijo minas" },
+    { "id": "breakfast-foods-08", "front": "mozzarella", "back": "mussarela" },
+    { "id": "breakfast-foods-09", "front": "ham", "back": "presunto" },
+    {
+      "id": "breakfast-foods-10",
+      "front": "milk",
+      "back": "leite",
+      "fillIns": [{ "id": "breakfast-foods-fill-02", "front": "I drink milk.\n\nEu bebo ___.", "back": "leite" }]
+    },
+    { "id": "breakfast-foods-11", "front": "chocolate milk", "back": "leite com chocolate" },
+    {
+      "id": "breakfast-foods-12",
+      "front": "cheese bread",
+      "back": "pão de queijo",
+      "fillIns": [{ "id": "breakfast-foods-fill-03", "front": "I eat cheese bread.\n\nEu como ___.", "back": "pão de queijo" }]
+    },
+    {
+      "id": "breakfast-foods-13",
+      "front": "coffee",
+      "back": "café",
+      "fillIns": [{ "id": "breakfast-foods-fill-04", "front": "I drink coffee before work.\n\nEu bebo ___ antes do trabalho.", "back": "café" }]
+    },
+    { "id": "breakfast-foods-14", "front": "toast", "back": "torrada" },
+    { "id": "breakfast-foods-15", "front": "cake", "back": "bolo" },
+    {
+      "id": "breakfast-foods-16",
+      "front": "scrambled eggs",
+      "back": "ovos mexidos",
+      "fillIns": [{ "id": "breakfast-foods-fill-05", "front": "I eat scrambled eggs.\n\nEu como ___.", "back": "ovos mexidos" }]
+    }
+  ]
+}
